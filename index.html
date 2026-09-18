@@ -1,197 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mezanoor Rahman Ashin — Marketing and Management professional with a BBA in Marketing.">
-<meta name="author" content="Mezanoor Rahman Ashin">
-<meta name="robots" content="index, follow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mezanoor Rahman Ashin — Digital Portfolio</title>
+<meta name="description" content="Mezanoor Rahman Ashin — Marketing and Management professional exploring business, technology and AI.">
 <link rel="canonical" href="https://mezanoorashin.github.io/">
-<meta property="og:title" content="Mezanoor Rahman Ashin | Marketing & Management">
-<meta property="og:description" content="Professional portfolio of Mezanoor Rahman Ashin.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://mezanoorashin.github.io/">
-<title>Mezanoor Rahman Ashin | Marketing & Management</title>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Mezanoor Rahman Ashin","url":"https://mezanoorashin.github.io/","jobTitle":"Marketing and Management Officer"}}
-</script>
 <style>
-:root{--navy:#0b1220;--blue:#2563eb;--text:#172033;--muted:#617086;--bg:#f7f9fc;--white:#fff;--line:#e5eaf1}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
-a{color:inherit}
-.container{width:min(1120px,calc(100% - 48px));margin:auto}
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-size:18px;font-weight:800;letter-spacing:-.025em;text-decoration:none;color:var(--navy)}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:14px;font-weight:650;text-decoration:none;color:var(--muted)}
-.nav-links a:hover{color:var(--blue)}
-
-.hero{background:linear-gradient(135deg,#fff 0%,#f4f7fc 100%);padding:92px 0 100px;border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:90px;align-items:center}
-.kicker{display:flex;align-items:center;gap:10px;color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex:none}
-h1{margin:20px 0 25px;color:var(--navy);font-size:clamp(54px,7vw,86px);line-height:.98;letter-spacing:-.065em;font-weight:850}
-.intro{max-width:690px;margin:0;color:var(--muted);font-size:20px;line-height:1.65}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-size:14px;font-weight:750;text-decoration:none}
-.btn-primary{background:var(--navy);color:#fff;box-shadow:0 8px 18px rgba(11,18,32,.18)}
-.btn-secondary{background:#fff;border:1px solid var(--line);color:var(--text)}
-
-.photo-wrap{width:100%;max-width:330px;justify-self:end}
-.photo-frame{background:#fff;padding:10px;border:1px solid #dce3ed;border-radius:24px;box-shadow:0 24px 55px rgba(15,23,42,.14)}
-.profile-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:17px}
-
-section{padding:86px 0}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}
-h2{margin:0;color:var(--navy);font-size:40px;line-height:1.1;letter-spacing:-.045em}
-.section-label{color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 8px 28px rgba(15,23,42,.045)}
-.card:hover{box-shadow:0 14px 34px rgba(15,23,42,.075)}
-.about-text{max-width:900px;color:#526074;font-size:18px}
-.about-text p:first-child{margin-top:0}
-.about-text p:last-child{margin-bottom:0}
-
-.experience{display:grid;grid-template-columns:185px 1fr;gap:35px}
-.date{padding-top:4px;color:var(--muted);font-size:13px;font-weight:750}
-.role{margin:0;color:var(--navy);font-size:25px;line-height:1.25}
-.company{margin:5px 0 18px;color:var(--blue);font-weight:750}
-.card ul{margin:0;padding-left:20px;color:#526074}
-.card li{margin:7px 0}
-
-.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.edu-card{min-height:205px}
-.edu-year{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.1em}
-.edu-card h3{margin:14px 0 8px;font-size:19px;line-height:1.3;color:var(--navy)}
-.edu-card p{margin:4px 0;color:var(--muted);font-size:14px}
-
-.skills{display:flex;flex-wrap:wrap;gap:10px}
-.tag{padding:9px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;color:#46556a;font-size:14px;font-weight:650}
-
-.contact-box{background:var(--navy);border-radius:22px;padding:55px;color:#fff}
-.contact-box .section-label{color:#9fb0c9}
-.contact-box h2{color:#fff;margin-top:10px}
-.contact-box p{color:#b9c5d6;font-size:17px}
-.email{display:inline-block;margin-top:10px;color:#fff;font-size:20px;font-weight:750;text-decoration:none;border-bottom:1px solid #718099;padding-bottom:3px}
-
-footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-
-@media(max-width:850px){
- .hero-grid{grid-template-columns:1fr;gap:48px}
- .photo-wrap{justify-self:start;max-width:290px}
- .edu-grid{grid-template-columns:1fr}
- .experience{grid-template-columns:1fr;gap:8px}
-}
-@media(max-width:650px){
- .container{width:min(100% - 36px,1120px)}
- .nav-inner{height:64px}
- .brand{font-size:16px}
- .nav-links{gap:12px}
- .nav-links a{font-size:12px}
- .nav-links a:nth-child(n+4){display:none}
- .hero{padding:65px 0 75px}
- h1{font-size:52px}
- .intro{font-size:18px}
- section{padding:68px 0}
- h2{font-size:32px}
- .section-head{display:block;margin-bottom:24px}
- .section-label{display:block;margin-top:8px}
- .card{padding:23px}
- .contact-box{padding:36px 25px}
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#070707;--fg:#f5f3ed;--muted:#aaa69e;--lime:#d8ff3e;--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+#scene{position:fixed;inset:0;z-index:-2}#glow{position:fixed;width:48vw;height:48vw;border-radius:50%;background:radial-gradient(circle,rgba(216,255,62,.18),transparent 66%);filter:blur(45px);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:25px 4vw;mix-blend-mode:difference}
+.logo{font-weight:700;font-size:16px}.navlinks{display:flex;gap:28px}.navlinks a{color:#fff;text-decoration:none;font-size:13px}
+.hero{min-height:100vh;display:flex;align-items:flex-end;padding:140px 6vw 8vw;position:relative}.hero-inner{max-width:1100px}
+.eyebrow{color:var(--lime);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:25px}
+h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;margin:0;max-width:1100px;font-weight:600}
+h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(245,243,237,.7)}
+.hero-desc{max-width:610px;color:#c0bdb5;font-size:18px;line-height:1.65;margin:42px 0 0}
+.scroll{position:absolute;right:6vw;bottom:7vw;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl}
+section{padding:150px 6vw;position:relative}.section-number{font-size:11px;color:var(--lime);letter-spacing:.18em}.section-title{font-family:"Space Grotesk";font-size:clamp(45px,7vw,100px);line-height:.9;letter-spacing:-.06em;margin:22px 0 55px}
+.statement{font-family:"Space Grotesk";font-size:clamp(28px,4vw,58px);line-height:1.05;letter-spacing:-.045em;max-width:1000px}
+.muted{color:#77736d}.grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line)}.panel{background:#090909;padding:42px;min-height:260px}.panel h3{font-size:22px;margin:0 0 18px}.panel p,.panel li{color:#9e9a92;line-height:1.7}.panel ul{padding-left:18px}
+.photo-stage{min-height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo-card{width:min(440px,75vw);transform:rotate(-5deg);position:relative;box-shadow:35px 45px 100px rgba(0,0,0,.55);transition:transform .5s}.photo-card:hover{transform:rotate(0) scale(1.025)}.photo-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;filter:saturate(.88)}.photo-label{position:absolute;bottom:18px;left:18px;background:rgba(0,0,0,.68);backdrop-filter:blur(12px);padding:10px 13px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.skills{display:flex;flex-wrap:wrap;gap:9px;max-width:1000px}.tag{border:1px solid #373737;border-radius:100px;padding:12px 17px;color:#d0cdc6;font-size:13px}.tag:hover{border-color:var(--lime);color:var(--lime)}
+.contact{min-height:85vh;display:flex;flex-direction:column;justify-content:center}.contact a{color:var(--fg);font-family:"Space Grotesk";font-size:clamp(30px,5vw,70px);text-decoration:none;border-bottom:1px solid #555;display:inline-block;width:max-content}.contact a:hover{color:var(--lime);border-color:var(--lime)}
+footer{padding:30px 6vw;color:#666;font-size:12px;border-top:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:700px){.navlinks{display:none}.hero{padding:130px 7vw 18vw}.hero-desc{font-size:16px}.scroll{display:none}section{padding:100px 7vw}.grid{grid-template-columns:1fr}.panel{min-height:auto;padding:30px}.photo-stage{min-height:65vh}}
 </style>
 </head>
 <body>
-<nav>
- <div class="container nav-inner">
-  <a class="brand" href="#">Mezanoor Rahman Ashin</a>
-  <div class="nav-links">
-   <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
-  </div>
- </div>
-</nav>
+<canvas id="scene"></canvas><div id="glow"></div>
+<nav><div class="logo">MEZANOOR RAHMAN ASHIN</div><div class="navlinks"><a href="#about">About</a><a href="#work">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero">
- <div class="container hero-grid">
-  <div>
-   <div class="kicker"><span class="dot"></span> Marketing · Management · Technology</div>
-   <h1>Mezanoor<br>Rahman Ashin</h1>
-   <p class="intro">Marketing and Management professional with a BBA in Marketing, professional experience in business operations and client relations, and an interest in technology and AI.</p>
-   <div class="actions">
-    <a class="btn btn-primary" href="#contact">Let's connect</a>
-    <a class="btn btn-secondary" href="#experience">My experience →</a>
-   </div>
-  </div>
-  <div class="photo-wrap">
-   <div class="photo-frame"><img class="profile-photo" src="profile.jpg?v=4" alt="Mezanoor Rahman Ashin" width="1000" height="1250"></div>
-  </div>
- </div>
+<div class="hero-inner reveal"><div class="eyebrow">Marketing · Management · Technology</div><h1>Mezanoor<br><span>Rahman Ashin</span></h1><p class="hero-desc">A marketing and management professional building a career at the intersection of business, technology and AI.</p></div>
+<div class="scroll">Scroll to explore ↓</div>
 </header>
 
-<main>
-<section id="about">
- <div class="container">
-  <div class="section-head"><h2>About me</h2><span class="section-label">01 — Profile</span></div>
-  <div class="card about-text">
-   <p>I am Mezanoor Rahman Ashin, a BBA graduate in Marketing with professional experience supporting client relationships, product presentations, marketing activities, and day-to-day business operations.</p>
-   <p>Alongside business and management, I have an interest in web technologies, artificial intelligence, and practical digital tools. I enjoy developing skills that connect business strategy with technology.</p>
-  </div>
- </div>
-</section>
+<section id="about"><div class="reveal"><div class="section-number">01 — ABOUT</div><h2 class="section-title">Business<br><span class="muted">meets technology.</span></h2><p class="statement">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and day-to-day business operations.</p></div></section>
 
-<section id="experience">
- <div class="container">
-  <div class="section-head"><h2>Experience</h2><span class="section-label">02 — Career</span></div>
-  <div class="card experience">
-   <div class="date">SEP 2024 — PRESENT</div>
-   <div>
-    <h3 class="role">Marketing and Management Officer</h3>
-    <p class="company">Shatadal AG Technology</p>
-    <ul>
-     <li>Support client relationships and business communication.</li>
-     <li>Assist with product presentations and marketing activities.</li>
-     <li>Contribute to day-to-day business operations and coordination.</li>
-     <li>Work collaboratively on operational and management-related tasks.</li>
-    </ul>
-   </div>
-  </div>
- </div>
-</section>
+<section class="photo-stage"><div class="photo-card reveal"><img src="profile.jpg?v=5" alt="Mezanoor Rahman Ashin"><div class="photo-label">Mezanoor Rahman Ashin · Dhaka</div></div></section>
 
-<section id="education">
- <div class="container">
-  <div class="section-head"><h2>Education</h2><span class="section-label">03 — Academic</span></div>
-  <div class="edu-grid">
-   <div class="card edu-card"><span class="edu-year">2024</span><h3>Bachelor of Business Administration</h3><p>Royal University of Dhaka · Major: Marketing</p><p><strong>CGPA 3.64</strong></p></div>
-   <div class="card edu-card"><span class="edu-year">2015</span><h3>Higher Secondary Certificate</h3><p>Milestone College</p><p><strong>GPA 4.00</strong></p></div>
-   <div class="card edu-card"><span class="edu-year">2013</span><h3>Secondary School Certificate</h3><p>Civil Aviation High School</p><p><strong>GPA 3.63</strong></p></div>
-  </div>
- </div>
-</section>
+<section id="work"><div class="reveal"><div class="section-number">02 — EXPERIENCE</div><h2 class="section-title">What I<br><span class="muted">do.</span></h2><div class="grid"><div class="panel"><h3>Marketing & Management Officer</h3><p style="color:#d8ff3e">Shatadal AG Technology · Sep 2024 — Present</p></div><div class="panel"><ul><li>Support client relationships and business communication.</li><li>Assist with product presentations and marketing activities.</li><li>Contribute to daily operations and coordination.</li><li>Collaborate on management and operational tasks.</li></ul></div></div></div></section>
 
-<section id="skills">
- <div class="container">
-  <div class="section-head"><h2>Skills</h2><span class="section-label">04 — Capabilities</span></div>
-  <div class="skills">
-   <span class="tag">Business Management</span><span class="tag">Marketing & Sales Support</span><span class="tag">Client Relationship Management</span><span class="tag">Business Communication</span><span class="tag">Supply Chain Management</span><span class="tag">Strategic Operations</span><span class="tag">Microsoft Office</span><span class="tag">Problem Solving</span><span class="tag">Team Collaboration</span><span class="tag">Time Management</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">Basic JavaScript</span><span class="tag">Basic Python</span><span class="tag">AI Tools</span>
-  </div>
- </div>
-</section>
+<section><div class="reveal"><div class="section-number">03 — EDUCATION</div><h2 class="section-title">Academic<br><span class="muted">foundation.</span></h2><div class="grid"><div class="panel"><h3>BBA · Marketing</h3><p>Royal University of Dhaka · 2024</p><p>CGPA 3.64</p></div><div class="panel"><h3>HSC</h3><p>Milestone College · 2015</p><p>GPA 4.00</p></div><div class="panel"><h3>SSC</h3><p>Civil Aviation High School · 2013</p><p>GPA 3.63</p></div></div></div></section>
 
-<section id="contact">
- <div class="container">
-  <div class="contact-box">
-   <span class="section-label">05 — Contact</span>
-   <h2>Let's connect.</h2>
-   <p>For professional or academic inquiries, you can reach me by email.</p>
-   <a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com</a>
-  </div>
- </div>
-</section>
-</main>
+<section id="skills"><div class="reveal"><div class="section-number">04 — CAPABILITIES</div><h2 class="section-title">Skills &<br><span class="muted">interests.</span></h2><div class="skills"><span class="tag">Business Management</span><span class="tag">Marketing & Sales</span><span class="tag">Client Relationships</span><span class="tag">Business Communication</span><span class="tag">Supply Chain</span><span class="tag">Strategic Operations</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Artificial Intelligence</span><span class="tag">AI Tools</span></div></div></section>
 
-<footer><div class="container">© 2026 Mezanoor Rahman Ashin · Professional portfolio</div></footer>
+<section id="contact" class="contact"><div class="reveal"><div class="section-number">05 — CONTACT</div><h2 class="section-title">Let's make<br><span class="muted">something.</span></h2><a href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
+<footer>© 2026 Mezanoor Rahman Ashin</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas=document.getElementById('scene'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,1000),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);camera.position.z=5;
+const geo=new THREE.IcosahedronGeometry(2.05,2),mat=new THREE.MeshPhysicalMaterial({color:0x10151b,metalness:.45,roughness:.22,wireframe:false,transparent:true,opacity:.72});
+const mesh=new THREE.Mesh(geo,mat);scene.add(mesh);
+const wire=new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color:0xd8ff3e,transparent:true,opacity:.16}));mesh.add(wire);
+const pts=new THREE.Points(new THREE.BufferGeometry(),new THREE.PointsMaterial({color:0xd8ff3e,size:.018,transparent:true,opacity:.65}));
+const positions=[];for(let i=0;i<700;i++){positions.push((Math.random()-.5)*12,(Math.random()-.5)*8,(Math.random()-.5)*7)}pts.geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));scene.add(pts);
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;document.getElementById('glow').style.left=e.clientX+'px';document.getElementById('glow').style.top=e.clientY+'px'});
+function tick(){requestAnimationFrame(tick);mesh.rotation.y+=.002+mx*.002;mesh.rotation.x+=.001+my*.001;pts.rotation.y-=.0004;renderer.render(scene,camera)}tick();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+const obs=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+</script>
 </body>
 </html>

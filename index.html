@@ -1,51 +1,70 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Mezanoor Rahman Ashin — Marketing and Management professional.">
-<meta name="author" content="Mezanoor Rahman Ashin">
-<title>Mezanoor Rahman Ashin — Immersive Portfolio</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#050505;--fg:#f4f2eb;--muted:#96938b;--acid:#d9ff35;--line:rgba(255,255,255,.14)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif;overflow-x:hidden}
-#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
-nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:25px 4.5vw;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}.brand{font-size:13px;font-weight:700;letter-spacing:.02em}.links{display:flex;gap:27px}.links a{color:#fff;text-decoration:none;font-size:12px}
-.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:100px 6vw}.hero-copy{position:relative;z-index:4;max-width:900px;text-shadow:0 2px 20px rgba(0,0,0,.35)}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--acid);font-weight:700;margin-bottom:24px}.hero h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;font-weight:600;margin:0;color:#fff}.hero h1 span{display:block;color:#fff;-webkit-text-stroke:0}.lead{max-width:510px;margin:38px 0 0;color:#aaa69d;font-size:17px;line-height:1.65}.hero-ui{position:absolute;bottom:38px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:#77736c;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.hero-ui b{color:var(--acid);font-weight:500}
-section{position:relative;padding:150px 7vw}.number{color:var(--acid);font-size:10px;letter-spacing:.2em}.title{font-family:"Space Grotesk";font-size:clamp(52px,8vw,115px);line-height:.88;letter-spacing:-.065em;font-weight:500;margin:20px 0 60px}.title .dim{color:#6d6a64}.statement{font-family:"Space Grotesk";font-size:clamp(28px,4.2vw,58px);line-height:1.02;letter-spacing:-.045em;max-width:1000px}.statement .dim{color:#77736d}
-.experience{border-top:1px solid var(--line)}.exp{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:45px 0;border-bottom:1px solid var(--line)}.exp h3{font:500 32px/1.05 "Space Grotesk";margin:0 0 12px}.exp .meta{color:var(--acid);font-size:12px}.exp p,.exp li{color:#929088;line-height:1.7}.exp ul{margin:0;padding-left:18px}
-.photo-section{min-height:100vh;display:grid;place-items:center;padding:100px 7vw;overflow:hidden}.photo-orbit{position:relative;width:min(430px,72vw);aspect-ratio:4/5;transform:rotate(-4deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.photo-orbit:hover{transform:rotate(0) scale(1.03)}.photo-orbit:before,.photo-orbit:after{content:"";position:absolute;border:1px solid rgba(217,255,53,.35);border-radius:50%;inset:-12%;transform:rotate(35deg) scaleY(.42)}.photo-orbit:after{inset:-20%;transform:rotate(-30deg) scaleY(.32);border-color:rgba(255,255,255,.18)}.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;filter:saturate(.85);box-shadow:0 35px 100px #000}.photo-caption{position:absolute;left:18px;bottom:18px;background:rgba(0,0,0,.55);padding:9px 12px;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
-.skills{display:flex;flex-wrap:wrap;gap:9px;max-width:1050px}.tag{border:1px solid #30302d;border-radius:100px;padding:12px 16px;font-size:12px;color:#aaa69e;transition:.25s}.tag:hover{color:var(--acid);border-color:var(--acid)}
-.contact{min-height:90vh;display:flex;flex-direction:column;justify-content:center}.email{font:500 clamp(30px,5vw,78px)/1 "Space Grotesk";color:#f4f2eb;text-decoration:none;letter-spacing:-.055em;border-bottom:1px solid #555;display:inline-block;width:max-content}.email:hover{color:var(--acid);border-color:var(--acid)}
-footer{padding:30px 7vw;border-top:1px solid var(--line);color:#5f5c56;font-size:11px;display:flex;justify-content:space-between}
-.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s ease,transform .9s ease}.reveal.show{opacity:1;transform:none}
-@media(max-width:700px){#webgl{opacity:.55}.links{display:none}.hero{padding:120px 7vw}.hero h1{font-size:62px}.lead{font-size:15px}.hero-ui{left:7vw;right:7vw}.exp{grid-template-columns:1fr;gap:18px}.photo-section{min-height:80vh}section{padding:105px 7vw}}
-</style>
-</head>
-<body>
-<canvas id="webgl"></canvas><div class="grain"></div>
-<nav><div class="brand">MEZANOOR RAHMAN ASHIN</div><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
-
-<header class="hero">
-<div class="hero-copy reveal"><div class="eyebrow">MARKETING · MANAGEMENT · TECHNOLOGY</div><h1>Mezanoor<br><span>Rahman Ashin</span></h1><p class="lead">A marketing and management professional connecting business, technology and AI.</p></div>
-<div class="hero-ui"><span><b>●</b> Interactive portfolio</span><span>Move · Scroll · Explore</span></div>
-</header>
-
-<section id="about"><div class="reveal"><div class="number">01 — ABOUT</div><h2 class="title">Business<br><span class="dim">meets technology.</span></h2><p class="statement">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and business operations.</p></div></section>
-
-<section class="photo-section"><div class="photo-orbit reveal"><img class="photo" src="profile.jpg?v=6" alt="Mezanoor Rahman Ashin"><div class="photo-caption">Mezanoor Rahman Ashin · Dhaka</div></div></section>
-
-<section id="experience"><div class="reveal"><div class="number">02 — EXPERIENCE</div><h2 class="title">What I<br><span class="dim">do.</span></h2><div class="experience"><div class="exp"><div><h3>Marketing & Management Officer</h3><div class="meta">SHATADAL AG TECHNOLOGY · SEP 2024 — PRESENT</div></div><ul><li>Client relationships and business communication.</li><li>Product presentations and marketing activities.</li><li>Daily operations and coordination.</li><li>Management and operational support.</li></ul></div></div></div></section>
-
-<section><div class="reveal"><div class="number">03 — EDUCATION</div><h2 class="title">Academic<br><span class="dim">foundation.</span></h2><div class="experience"><div class="exp"><div><h3>BBA — Marketing</h3><div class="meta">ROYAL UNIVERSITY OF DHAKA · 2024</div></div><p>CGPA 3.64</p></div><div class="exp"><div><h3>HSC</h3><div class="meta">MILESTONE COLLEGE · 2015</div></div><p>GPA 4.00</p></div><div class="exp"><div><h3>SSC</h3><div class="meta">CIVIL AVIATION HIGH SCHOOL · 2013</div></div><p>GPA 3.63</p></div></div></div></section>
-
-<section id="skills"><div class="reveal"><div class="number">04 — CAPABILITIES</div><h2 class="title">Skills &<br><span class="dim">interests.</span></h2><div class="skills"><span class="tag">Business Management</span><span class="tag">Marketing & Sales Support</span><span class="tag">Client Relationship Management</span><span class="tag">Business Communication</span><span class="tag">Supply Chain Management</span><span class="tag">Strategic Operations</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Artificial Intelligence</span><span class="tag">AI Tools</span></div></div></section>
-
-<section id="contact" class="contact"><div class="reveal"><div class="number">05 — CONTACT</div><h2 class="title">Let's make<br><span class="dim">something.</span></h2><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
-<footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Immersive portfolio</span></footer>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas=document.getElementById('webgl');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,innerWidth/innerHeight,.1,100);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);camera.position.z=7;
+
+const earthGroup=new THREE.Group();
+earthGroup.position.set(2.45,0.05,0);
+earthGroup.scale.setScalar(1.62);
+scene.add(earthGroup);
+
+scene.add(new THREE.AmbientLight(0xffffff,.24));
+const sun=new THREE.DirectionalLight(0xffffff,3.2);sun.position.set(-4,2.5,5);scene.add(sun);
+const rim=new THREE.PointLight(0x168dff,28,15);rim.position.set(4,-1,4);scene.add(rim);
+
+const loader=new THREE.TextureLoader();
+const earthMap=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
+const earth=new THREE.Mesh(new THREE.SphereGeometry(1.5,80,80),new THREE.MeshPhongMaterial({map:earthMap,shininess:32}));
+earthGroup.add(earth);
+
+const cloudMap=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png');
+const clouds=new THREE.Mesh(new THREE.SphereGeometry(1.525,80,80),new THREE.MeshPhongMaterial({map:cloudMap,transparent:true,opacity:.52,depthWrite:false}));
+earthGroup.add(clouds);
+
+const glow=new THREE.Mesh(new THREE.SphereGeometry(1.63,80,80),new THREE.MeshBasicMaterial({color:0x39a9ff,transparent:true,opacity:.12,side:THREE.BackSide}));
+earthGroup.add(glow);
+
+// Star field with depth, drift and twinkle.
+const starCount=2600, pos=new Float32Array(starCount*3);
+for(let i=0;i<starCount;i++){pos[i*3]=(Math.random()-.5)*18;pos[i*3+1]=(Math.random()-.5)*11;pos[i*3+2]=(Math.random()-.5)*10-2;}
+const sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+const sm=new THREE.PointsMaterial({color:0xffffff,size:.018,transparent:true,opacity:.82,sizeAttenuation:true});
+const stars=new THREE.Points(sg,sm);scene.add(stars);
+
+const blueStars=new THREE.Points(sg.clone(),new THREE.PointsMaterial({color:0x66bfff,size:.012,transparent:true,opacity:.42,sizeAttenuation:true}));
+blueStars.position.z=-2;scene.add(blueStars);
+
+// Meteor streaks.
+const meteorGroup=new THREE.Group();scene.add(meteorGroup);
+for(let i=0;i<7;i++){
+ const geo=new THREE.BufferGeometry();
+ const x=(Math.random()-.5)*13,y=(Math.random()-.5)*7,z=-1-Math.random()*3,len=.35+Math.random()*.65;
+ geo.setAttribute('position',new THREE.Float32BufferAttribute([x,y,z,x-len,y+len*.55,z],3));
+ meteorGroup.add(new THREE.Line(geo,new THREE.LineBasicMaterial({color:0x78cfff,transparent:true,opacity:.8})));
+}
+let tx=0,ty=0;
+addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});
+let t=0;
+function animate(){
+ requestAnimationFrame(animate);t+=.01;
+ earth.rotation.y+=.0018;clouds.rotation.y+=.00235;
+ earthGroup.rotation.y+=(tx*.30-earthGroup.rotation.y)*.035;
+ earthGroup.rotation.x+=(ty*.16-earthGroup.rotation.x)*.035;
+ earthGroup.position.x+=(2.45+tx*.38-earthGroup.position.x)*.025;
+ earthGroup.position.y+=(.05-ty*.16-earthGroup.position.y)*.025;
+ stars.rotation.y+=.00013;blueStars.rotation.y-=.00006;
+ sm.opacity=.72+Math.sin(t*1.6)*.12;
+ meteorGroup.position.x=Math.sin(t*.22)*.035;
+ renderer.render(scene,camera);
+}
+animate();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
 <script>
 const canvas=document.getElementById('webgl');
 const scene=new THREE.Scene();

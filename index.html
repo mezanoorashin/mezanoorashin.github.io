@@ -10,9 +10,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root{--bg:#050505;--fg:#f4f2eb;--muted:#96938b;--acid:#d9ff35;--line:rgba(255,255,255,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif;overflow-x:hidden}
-#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:-3}.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
 nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:25px 4.5vw;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}.brand{font-size:13px;font-weight:700;letter-spacing:.02em}.links{display:flex;gap:27px}.links a{color:#fff;text-decoration:none;font-size:12px}
-.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:100px 6vw}.hero-copy{position:relative;z-index:2;max-width:900px}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--acid);font-weight:700;margin-bottom:24px}.hero h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;font-weight:600;margin:0}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7)}.lead{max-width:510px;margin:38px 0 0;color:#aaa69d;font-size:17px;line-height:1.65}.hero-ui{position:absolute;bottom:38px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:#77736c;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.hero-ui b{color:var(--acid);font-weight:500}
+.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:100px 6vw}.hero-copy{position:relative;z-index:4;max-width:900px;text-shadow:0 2px 20px rgba(0,0,0,.35)}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--acid);font-weight:700;margin-bottom:24px}.hero h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;font-weight:600;margin:0;color:#fff}.hero h1 span{display:block;color:#fff;-webkit-text-stroke:0}.lead{max-width:510px;margin:38px 0 0;color:#aaa69d;font-size:17px;line-height:1.65}.hero-ui{position:absolute;bottom:38px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:#77736c;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.hero-ui b{color:var(--acid);font-weight:500}
 section{position:relative;padding:150px 7vw}.number{color:var(--acid);font-size:10px;letter-spacing:.2em}.title{font-family:"Space Grotesk";font-size:clamp(52px,8vw,115px);line-height:.88;letter-spacing:-.065em;font-weight:500;margin:20px 0 60px}.title .dim{color:#6d6a64}.statement{font-family:"Space Grotesk";font-size:clamp(28px,4.2vw,58px);line-height:1.02;letter-spacing:-.045em;max-width:1000px}.statement .dim{color:#77736d}
 .experience{border-top:1px solid var(--line)}.exp{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:45px 0;border-bottom:1px solid var(--line)}.exp h3{font:500 32px/1.05 "Space Grotesk";margin:0 0 12px}.exp .meta{color:var(--acid);font-size:12px}.exp p,.exp li{color:#929088;line-height:1.7}.exp ul{margin:0;padding-left:18px}
 .photo-section{min-height:100vh;display:grid;place-items:center;padding:100px 7vw;overflow:hidden}.photo-orbit{position:relative;width:min(430px,72vw);aspect-ratio:4/5;transform:rotate(-4deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.photo-orbit:hover{transform:rotate(0) scale(1.03)}.photo-orbit:before,.photo-orbit:after{content:"";position:absolute;border:1px solid rgba(217,255,53,.35);border-radius:50%;inset:-12%;transform:rotate(35deg) scaleY(.42)}.photo-orbit:after{inset:-20%;transform:rotate(-30deg) scaleY(.32);border-color:rgba(255,255,255,.18)}.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;filter:saturate(.85);box-shadow:0 35px 100px #000}.photo-caption{position:absolute;left:18px;bottom:18px;background:rgba(0,0,0,.55);padding:9px 12px;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
@@ -20,7 +20,7 @@ section{position:relative;padding:150px 7vw}.number{color:var(--acid);font-size:
 .contact{min-height:90vh;display:flex;flex-direction:column;justify-content:center}.email{font:500 clamp(30px,5vw,78px)/1 "Space Grotesk";color:#f4f2eb;text-decoration:none;letter-spacing:-.055em;border-bottom:1px solid #555;display:inline-block;width:max-content}.email:hover{color:var(--acid);border-color:var(--acid)}
 footer{padding:30px 7vw;border-top:1px solid var(--line);color:#5f5c56;font-size:11px;display:flex;justify-content:space-between}
 .reveal{opacity:0;transform:translateY(45px);transition:opacity .9s ease,transform .9s ease}.reveal.show{opacity:1;transform:none}
-@media(max-width:700px){.links{display:none}.hero{padding:120px 7vw}.hero h1{font-size:62px}.lead{font-size:15px}.hero-ui{left:7vw;right:7vw}.exp{grid-template-columns:1fr;gap:18px}.photo-section{min-height:80vh}section{padding:105px 7vw}}
+@media(max-width:700px){#webgl{opacity:.55}.links{display:none}.hero{padding:120px 7vw}.hero h1{font-size:62px}.lead{font-size:15px}.hero-ui{left:7vw;right:7vw}.exp{grid-template-columns:1fr;gap:18px}.photo-section{min-height:80vh}section{padding:105px 7vw}}
 </style>
 </head>
 <body>
@@ -46,6 +46,61 @@ footer{padding:30px 7vw;border-top:1px solid var(--line);color:#5f5c56;font-size
 <footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Immersive portfolio</span></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas=document.getElementById('webgl');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);camera.position.z=7;
+
+const earthGroup=new THREE.Group();
+earthGroup.position.set(2.65,0.15,0);
+earthGroup.scale.setScalar(1.55);
+scene.add(earthGroup);
+
+scene.add(new THREE.AmbientLight(0xffffff,.32));
+const sun=new THREE.DirectionalLight(0xffffff,2.4);sun.position.set(-4,2,5);scene.add(sun);
+const rim=new THREE.PointLight(0x3b82f6,20,12);rim.position.set(4,-2,3);scene.add(rim);
+
+const loader=new THREE.TextureLoader();
+const earthTexture=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
+const earth=new THREE.Mesh(
+  new THREE.SphereGeometry(1.5,64,64),
+  new THREE.MeshPhongMaterial({map:earthTexture,shininess:18})
+);
+earthGroup.add(earth);
+
+const cloudsTexture=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png');
+const clouds=new THREE.Mesh(
+  new THREE.SphereGeometry(1.53,64,64),
+  new THREE.MeshPhongMaterial({map:cloudsTexture,transparent:true,opacity:.5,depthWrite:false})
+);
+earthGroup.add(clouds);
+
+const atmosphere=new THREE.Mesh(
+  new THREE.SphereGeometry(1.62,64,64),
+  new THREE.MeshBasicMaterial({color:0x4da6ff,transparent:true,opacity:.09,side:THREE.BackSide})
+);
+earthGroup.add(atmosphere);
+
+let mx=0,my=0;
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function animate(){
+ requestAnimationFrame(animate);
+ earth.rotation.y+=.0022;
+ clouds.rotation.y+=.0028;
+ earthGroup.rotation.y+=(mx*.12-earthGroup.rotation.y)*.018;
+ earthGroup.rotation.x+=(my*.06-earthGroup.rotation.x)*.018;
+ renderer.render(scene,camera);
+}
+animate();
+addEventListener('resize',()=>{
+ camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
+ renderer.setSize(innerWidth,innerHeight);
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
 <script>
 const canvas=document.getElementById('webgl'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100),renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);camera.position.z=7;

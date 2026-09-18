@@ -10,9 +10,7 @@
 :root{--bg:#01040a;--fg:#f7f9fc;--muted:#9eabba;--blue:#0d9cff;--line:rgba(255,255,255,.13)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
 #space{position:fixed;inset:-2%;width:104%;height:104%;z-index:-20;background:#01040a url("https://svs.gsfc.nasa.gov/vis/a000000/a003900/a003921/stars.1800_print.jpg") center/cover no-repeat;transition:transform .18s ease-out}
-#space:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 45%,rgba(0,112,255,.20),transparent 27%),linear-gradient(90deg,rgba(0,0,0,.64) 0%,rgba(0,0,0,.20) 49%,rgba(0,0,0,.03) 100%)}
-.sun-glow{position:fixed;right:-3vw;top:29vh;width:34vw;height:34vw;z-index:-3;pointer-events:none;background:radial-gradient(circle,rgba(255,244,214,.72) 0%,rgba(126,199,255,.24) 9%,rgba(34,132,255,.10) 26%,transparent 62%);filter:blur(2px)}
-.streak{position:fixed;z-index:-2;height:2px;width:180px;background:linear-gradient(90deg,transparent,rgba(125,207,255,.9),transparent);transform:rotate(28deg);opacity:.65;filter:blur(.3px)}.s1{left:18%;top:22%}.s2{right:10%;bottom:17%;width:150px;transform:rotate(47deg)}.s3{left:29%;bottom:28%;width:110px;transform:rotate(35deg);opacity:.35}
+#space:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 52%,rgba(0,86,170,.18),transparent 30%),linear-gradient(90deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.16) 47%,rgba(0,0,0,.06) 100%)}
 nav{position:fixed;top:0;left:0;right:0;height:92px;padding:0 5.2vw;display:flex;align-items:center;justify-content:space-between;z-index:20;background:linear-gradient(180deg,rgba(0,3,8,.78),rgba(0,3,8,0));}
 .brand{font-size:13px;font-weight:800;letter-spacing:.08em}.links{display:flex;gap:34px}.links a{color:#dce5ef;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.04em}.links a:hover{color:#28a9ff}
 .hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:90px 5.2vw 72px;overflow:hidden}
@@ -22,18 +20,18 @@ h1{font-family:"Space Grotesk";font-size:clamp(58px,6.2vw,94px);line-height:.91;
 .lead{font-size:15px;line-height:1.72;color:#b7c3d1;max-width:505px;margin:28px 0 31px}.actions{display:flex;gap:12px}.btn{height:52px;padding:0 24px;border-radius:7px;display:inline-flex;align-items:center;text-decoration:none;font-size:12px;font-weight:800;transition:.25s}.primary{color:#fff;background:#078df5;box-shadow:0 12px 32px rgba(0,126,239,.24)}.primary:hover{transform:translateY(-2px);background:#19a5ff}.secondary{color:#fff;border:1px solid rgba(210,225,240,.55);background:rgba(2,7,13,.2)}.secondary:hover{transform:translateY(-2px);border-color:#20a7ff}
 .bottom{position:absolute;bottom:29px;left:5.2vw;right:5.2vw;display:flex;justify-content:space-between;z-index:8;color:#8f9eaf;font-size:10px}.scroll{display:flex;gap:11px;align-items:center}.mouse{width:20px;height:31px;border:1.5px solid #e9f0f6;border-radius:14px;position:relative}.mouse:after{content:"";position:absolute;top:6px;left:8px;width:2px;height:6px;border-radius:3px;background:#fff;animation:d 1.5s infinite}@keyframes d{50%{transform:translateY(8px);opacity:.25}}.loc{text-align:right;line-height:1.65}.loc b{display:block;color:#edf4fb}
 section{padding:140px 7vw;background:rgba(1,4,9,.94);border-top:1px solid var(--line)}.label{font-size:10px;font-weight:800;letter-spacing:.2em;color:#18a1ff}.title{font-family:"Space Grotesk";font-size:clamp(52px,7vw,100px);line-height:.9;letter-spacing:-.065em;margin:18px 0 45px}.dim{color:#77879a}.statement{font-size:clamp(25px,3.4vw,48px);line-height:1.1;max-width:1050px}.experience{max-width:1050px;border-top:1px solid var(--line)}.exp{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:35px 0;border-bottom:1px solid var(--line)}.exp h3{font:600 28px "Space Grotesk";margin:0 0 9px}.meta{font-size:11px;color:#19a2ff;font-weight:700}.exp p,.exp li{color:#a8b5c7;line-height:1.7}.skills{display:flex;flex-wrap:wrap;gap:9px;max-width:1050px}.tag{padding:11px 15px;border:1px solid #263447;border-radius:999px;color:#bac6d5}.email{font:600 clamp(28px,5vw,68px) "Space Grotesk";color:#fff;text-decoration:none;border-bottom:1px solid #536274}
-.reveal{opacity:1;transform:none;transition:.8s}.reveal.show{opacity:1;transform:none}footer{padding:28px 7vw;border-top:1px solid var(--line);color:#718095;font-size:11px;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(35px);transition:.8s}.reveal.show{opacity:1;transform:none}footer{padding:28px 7vw;border-top:1px solid var(--line);color:#718095;font-size:11px;display:flex;justify-content:space-between}
 @media(max-width:1100px){.hero-copy{width:min(560px,50vw)}h1{font-size:clamp(54px,6.7vw,82px)}}
 @media(max-width:800px){.links{display:none}.hero{padding:110px 24px 80px;align-items:flex-start;padding-top:24vh}.hero-copy{width:100%;max-width:520px}.lead{font-size:14px}h1{font-size:57px}.bottom{left:24px;right:24px}.loc{display:none}section{padding:100px 24px}.exp{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div id="space"></div><div class="sun-glow"></div><div class="streak s1"></div><div class="streak s2"></div><div class="streak s3"></div>
+<div id="space"></div>
 <nav><div class="brand">MEZANOOR RAHMAN ASHIN</div><div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero" id="home">
 <div class="hero-copy reveal">
-<div class="eyebrow">BUSINESS&nbsp;&nbsp;·&nbsp;&nbsp;TECHNOLOGY&nbsp;&nbsp;·&nbsp;&nbsp;GROWTH</div>
+<div class="eyebrow">BUSINESS · TECHNOLOGY · GROWTH</div>
 <h1>Business<br><span>meets technology</span></h1>
 <p class="lead">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and business operations.</p>
 <div class="actions"><a class="btn primary" href="#experience">View My Work&nbsp; →</a><a class="btn secondary" href="#contact">Get in Touch</a></div>
@@ -48,24 +46,24 @@ section{padding:140px 7vw;background:rgba(1,4,9,.94);border-top:1px solid var(--
 <section id="contact"><div class="reveal"><div class="label">05 — CONTACT</div><h2 class="title">Let's make<br><span class="dim">something.</span></h2><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
 <footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Immersive portfolio</span></footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}));document.querySelectorAll(".reveal").forEach(x=>io.observe(x));</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.1,100);
 camera.position.z=6.4;
 const earthCanvas=document.createElement('canvas');earthCanvas.id='earth';earthCanvas.style.cssText='position:fixed;inset:0;width:100%;height:100%;z-index:-4;pointer-events:none;';document.body.appendChild(earthCanvas);
 const renderer=new THREE.WebGLRenderer({canvas:earthCanvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
-const group=new THREE.Group();group.position.set(3.05,.02,.15);scene.add(group);
+const group=new THREE.Group();group.position.set(2.85,.02,.25);scene.add(group);
 const loader=new THREE.TextureLoader();loader.crossOrigin='anonymous';
 const day=loader.load('https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png?v=2');
 const night=loader.load('https://svs.gsfc.nasa.gov/vis/a030000/a030000/a030003/earth_lights_print.jpg?v=2');
 const cloud=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png?v=2');
 const sun=new THREE.DirectionalLight(0xffffff,2.7);sun.position.set(-3,1.7,5);scene.add(sun);scene.add(new THREE.AmbientLight(0x7d91aa,.15));
 const mat=new THREE.ShaderMaterial({uniforms:{dayMap:{value:day},nightMap:{value:night},sunDir:{value:new THREE.Vector3(-.55,.25,.78).normalize()}},vertexShader:'varying vec2 vUv;varying vec3 vN;void main(){vUv=uv;vN=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'uniform sampler2D dayMap;uniform sampler2D nightMap;uniform vec3 sunDir;varying vec2 vUv;varying vec3 vN;void main(){vec3 d=texture2D(dayMap,vUv).rgb;vec3 n=texture2D(nightMap,vUv).rgb;float l=dot(normalize(vN),sunDir);float dayAmt=smoothstep(-.12,.24,l);vec3 city=n*vec3(1.,.68,.22)*1.5;vec3 c=mix(city,d,dayAmt);c*=.98+.18*max(l,0.);gl_FragColor=vec4(c,1.);}'}});
-const earth=new THREE.Mesh(new THREE.SphereGeometry(2.22,144,144),mat);group.add(earth);
-const clouds=new THREE.Mesh(new THREE.SphereGeometry(2.245,144,144),new THREE.MeshPhongMaterial({map:cloud,transparent:true,opacity:.19,depthWrite:false}));group.add(clouds);
-const glow=new THREE.Mesh(new THREE.SphereGeometry(2.39,112,112),new THREE.MeshBasicMaterial({color:0x4caeff,transparent:true,opacity:.045,side:THREE.BackSide}));group.add(glow);
+const earth=new THREE.Mesh(new THREE.SphereGeometry(2.12,128,128),mat);group.add(earth);
+const clouds=new THREE.Mesh(new THREE.SphereGeometry(2.145,128,128),new THREE.MeshPhongMaterial({map:cloud,transparent:true,opacity:.19,depthWrite:false}));group.add(clouds);
+const glow=new THREE.Mesh(new THREE.SphereGeometry(2.28,96,96),new THREE.MeshBasicMaterial({color:0x4caeff,transparent:true,opacity:.045,side:THREE.BackSide}));group.add(glow);
 let tx=0,ty=0,cx=0,cy=0;addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});
-function animate(){requestAnimationFrame(animate);cx+=(tx-cx)*.035;cy+=(ty-cy)*.035;group.position.x=3.05+cx*.38;group.position.y=.02-cy*.24;group.rotation.y+=.00042;group.rotation.x=cy*.035;clouds.rotation.y+=.0016;renderer.render(scene,camera)}animate();
+function animate(){requestAnimationFrame(animate);cx+=(tx-cx)*.035;cy+=(ty-cy)*.035;group.position.x=2.85+cx*.55;group.position.y=.02-cy*.32;group.rotation.y+=.0008;group.rotation.x=cy*.035;clouds.rotation.y+=.0016;renderer.render(scene,camera)}animate();
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 </script>

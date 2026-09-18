@@ -32,7 +32,7 @@ section{position:relative;z-index:2;padding:140px 7vw;background:linear-gradient
 <nav><div class="brand">MEZANOOR RAHMAN ASHIN</div><div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 <header class="hero" id="home">
 <div class="copy"><div class="eyebrow">MARKETING · MANAGEMENT · TECHNOLOGY</div><h1>Mezanoor<span>Rahman Ashin</span></h1><p class="lead">Marketing and Management professional with a BBA in Marketing, professional experience in business operations and client relations, and an interest in technology and AI.</p><div class="actions"><a class="btn primary" href="#experience">View My Experience →</a><a class="btn secondary" href="#contact">Get in Touch</a></div></div>
-<div class="earth-wrap" id="earth"><img class="earth" src="https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg" alt="Earth"></div>
+<div class="earth-wrap" id="earth"><img class="earth" src="https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png" alt="Earth"></div>
 <div class="bottom"><div><span class="mouse"></span>Scroll to explore<br><small style="margin-left:39px">⌄</small></div><div class="loc"><strong>⌖ &nbsp;Dhaka, Bangladesh</strong>Building a better tomorrow</div></div>
 </header>
 <section id="about"><div class="inner"><div class="num">01 — ABOUT</div><h2 class="title">Business<br><span class="dim">meets technology.</span></h2><p class="statement">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and business operations.</p></div></section>
@@ -88,11 +88,11 @@ scene.add(nearStars);
 const earthGroup=new THREE.Group();
 earthGroup.position.set(2.35,.05,0);
 scene.add(earthGroup);
-scene.add(new THREE.AmbientLight(0xffffff,.38));
-const sun=new THREE.DirectionalLight(0xffffff,2.8);
+scene.add(new THREE.AmbientLight(0xffffff,.22));
+const sun=new THREE.DirectionalLight(0xffffff,1.65);
 sun.position.set(-4,2,5);
 scene.add(sun);
-const rim=new THREE.PointLight(0x2196ff,28,12);
+const rim=new THREE.PointLight(0x2b6fff,8,12);
 rim.position.set(4,-1,4);
 scene.add(rim);
 
@@ -101,20 +101,20 @@ loader.crossOrigin='anonymous';
 const earthTexture=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
 const earth=new THREE.Mesh(
   new THREE.SphereGeometry(1.48,72,72),
-  new THREE.MeshPhongMaterial({map:earthTexture,shininess:22})
+  new THREE.MeshPhongMaterial({map:earthTexture,shininess:8, specular:new THREE.Color(0x222222), specularMap:null})
 );
 earthGroup.add(earth);
 
 const cloudsTexture=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png');
 const clouds=new THREE.Mesh(
   new THREE.SphereGeometry(1.505,72,72),
-  new THREE.MeshPhongMaterial({map:cloudsTexture,transparent:true,opacity:.48,depthWrite:false})
+  new THREE.MeshPhongMaterial({map:cloudsTexture,transparent:true,opacity:.20,depthWrite:false})
 );
 earthGroup.add(clouds);
 
 const atmosphere=new THREE.Mesh(
   new THREE.SphereGeometry(1.60,72,72),
-  new THREE.MeshBasicMaterial({color:0x38aaff,transparent:true,opacity:.13,side:THREE.BackSide})
+  new THREE.MeshBasicMaterial({color:0x78bfff,transparent:true,opacity:.055,side:THREE.BackSide})
 );
 earthGroup.add(atmosphere);
 

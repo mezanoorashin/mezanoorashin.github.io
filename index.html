@@ -1,95 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mezanoor Rahman Ashin — Immersive Portfolio</title>
-<meta name="description" content="Mezanoor Rahman Ashin — Marketing, management and technology portfolio.">
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mezanoor Rahman Ashin — Digital Systems</title>
+<meta name="description" content="Mezanoor Rahman Ashin — marketing, management and technology portfolio.">
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070707;color:#f4f2ec;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
-#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
-.noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
-header{position:fixed;z-index:20;top:0;left:0;right:0;height:82px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.13);mix-blend-mode:normal;backdrop-filter:blur(8px)}
-.logo{font-size:11px;font-weight:800;letter-spacing:.02em;color:#fff;text-decoration:none}.logo span{opacity:.45;font-weight:500;margin-left:8px}
-nav{display:flex;gap:28px;align-items:center}nav a{color:#fff;text-decoration:none;font-size:10px;text-transform:uppercase;letter-spacing:.13em;opacity:.7}nav a:hover{opacity:1}.pill{border:1px solid rgba(255,255,255,.4);border-radius:99px;padding:11px 16px;opacity:1}
-main{position:relative;z-index:2}
-section{min-height:100vh;position:relative;padding:115px 5vw 50px;display:flex;flex-direction:column;justify-content:center}
-.hero{justify-content:space-between;padding-top:125px;padding-bottom:45px}.eyebrow{display:flex;justify-content:space-between;text-transform:uppercase;letter-spacing:.17em;font-size:9px;font-weight:600;color:rgba(255,255,255,.58)}
-.heroCopy{max-width:900px;position:relative}.hero h1{font-size:clamp(76px,13vw,190px);line-height:.78;letter-spacing:-.095em;margin:0;font-weight:800}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.72)}
-.heroSub{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-top:35px}.heroSub p{max-width:410px;font-size:15px;line-height:1.55;color:rgba(255,255,255,.68);margin:0}.scroll{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.3);padding:13px 17px;border-radius:50px}
-.hint{position:absolute;right:5vw;top:48%;font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.38);writing-mode:vertical-rl}
-.panel{background:rgba(8,8,8,.42);border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}
-.panelInner{width:100%;display:grid;grid-template-columns:.7fr 2fr;gap:7vw;align-items:start}.num{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45)}.title{font-size:clamp(45px,7vw,105px);line-height:.86;letter-spacing:-.075em;margin:0;font-weight:700}.title em{font-style:normal;color:rgba(255,255,255,.38)}
-.copy{font-size:18px;line-height:1.6;color:rgba(255,255,255,.68);max-width:670px;margin:28px 0 0}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:55px;max-width:700px}.stat{border-top:1px solid rgba(255,255,255,.2);padding-top:13px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45)}.stat b{display:block;color:#fff;font-size:13px;letter-spacing:0;margin-bottom:7px}
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:55px}.card{min-height:390px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.045);padding:22px;position:relative;overflow:hidden;transition:.5s;backdrop-filter:blur(8px)}.card:hover{background:rgba(255,255,255,.09);transform:translateY(-7px)}.card small{font-size:9px;letter-spacing:.15em;color:rgba(255,255,255,.5)}.card h3{position:absolute;left:22px;bottom:54px;font-size:46px;line-height:.86;letter-spacing:-.07em;margin:0}.card p{position:absolute;left:22px;bottom:20px;font-size:10px;color:rgba(255,255,255,.55);max-width:280px;margin:0}.orb{position:absolute;width:180px;height:180px;border-radius:50%;right:-40px;top:50px;background:radial-gradient(circle at 30% 25%,#fff,rgba(255,255,255,.25) 15%,rgba(108,74,255,.45) 42%,rgba(20,10,50,.05) 70%);filter:blur(.2px);box-shadow:inset -20px -30px 50px rgba(0,0,0,.65),0 0 70px rgba(111,76,255,.15);transition:.7s}.card:hover .orb{transform:scale(1.25) rotate(20deg)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:45px}.tag{border:1px solid rgba(255,255,255,.22);border-radius:50px;padding:12px 16px;font-size:10px;color:rgba(255,255,255,.72);background:rgba(255,255,255,.025);transition:.3s}.tag:hover{background:#fff;color:#111}
-.contact{min-height:90vh}.contact h2{font-size:clamp(60px,11vw,160px);line-height:.78;letter-spacing:-.09em;margin:0}.contact h2 span{color:#8b7cff}.mail{display:inline-block;margin-top:50px;color:#fff;text-decoration:none;font-size:14px;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:9px}
-footer{position:relative;z-index:3;padding:25px 5vw;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;color:rgba(255,255,255,.35);font-size:9px;background:#070707}
-@media(max-width:800px){header{height:70px}nav a:not(.pill){display:none}.hero{padding-top:105px}.hero h1{font-size:70px}.heroSub{display:block}.scroll{display:inline-block;margin-top:25px}.hint{display:none}.panelInner{grid-template-columns:1fr;gap:35px}.cards{grid-template-columns:1fr}.card{min-height:340px}.stats{grid-template-columns:1fr 1fr}}
-</style>
-</head>
-<body>
-<canvas id="webgl"></canvas><div class="noise"></div>
-<header><a class="logo" href="#home">MEZANOOR RAHMAN ASHIN <span>PORTFOLIO / 2026</span></a><nav><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a class="pill" href="mailto:mezanoor.ashin@gmail.com">Contact ↗</a></nav></header>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#05080a;--panel:#091015;--line:#1a3942;--text:#e8f7f6;--muted:#6d8b90;--cyan:#35f2ff;--green:#8aff65}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+#grid{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(53,242,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(53,242,255,.035) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,black,transparent 90%)}
+#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none}
+.scan{position:fixed;inset:0;z-index:3;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 1px,transparent 5px)}
+header{height:76px;position:fixed;z-index:20;top:0;left:0;right:0;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(5,8,10,.72);backdrop-filter:blur(16px)}
+.logo{font-family:'IBM Plex Mono';font-size:11px;color:var(--text);text-decoration:none;letter-spacing:.06em}.logo i{font-style:normal;color:var(--cyan)}
+nav{display:flex;gap:25px;align-items:center}nav a{font-family:'IBM Plex Mono';font-size:9px;color:var(--muted);text-decoration:none;text-transform:uppercase;letter-spacing:.12em}nav a:hover{color:var(--cyan)}.connect{border:1px solid #2b5962;padding:10px 14px;color:var(--cyan)!important}
+main{position:relative;z-index:5}.hero{min-height:100vh;padding:110px 5vw 45px;display:flex;flex-direction:column;justify-content:space-between}
+.meta{display:flex;justify-content:space-between;font:9px 'IBM Plex Mono';color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.live{color:var(--green)}.live:before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:7px;box-shadow:0 0 12px var(--green);animation:blink 1.2s infinite}@keyframes blink{50%{opacity:.25}}
+.heroCenter{max-width:900px}.code{font:10px 'IBM Plex Mono';color:var(--cyan);letter-spacing:.08em;margin-bottom:20px}.hero h1{font-size:clamp(64px,11.5vw,170px);line-height:.8;letter-spacing:-.09em;margin:0;font-weight:700}.hero h1 span{color:transparent;-webkit-text-stroke:1px #6f8c91}.sub{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:38px}.sub p{max-width:390px;color:#8fa8ac;font-size:14px;line-height:1.6;margin:0}.terminal{font:9px 'IBM Plex Mono';color:var(--muted);line-height:1.8}.terminal b{color:var(--green);font-weight:400}.terminal em{color:var(--cyan);font-style:normal}
+section{min-height:100vh;padding:125px 5vw 70px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(5,8,10,.82),rgba(5,8,10,.94))}
+.sectionHead{display:flex;justify-content:space-between;align-items:start;margin-bottom:65px}.index{font:10px 'IBM Plex Mono';color:var(--cyan)}h2{font-size:clamp(46px,7vw,105px);line-height:.85;letter-spacing:-.07em;margin:0;max-width:850px}h2 span{color:#55747a}
+.aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:8vw}.aboutGrid p{font-size:20px;line-height:1.55;color:#a6b9bc;max-width:600px}.data{font:10px 'IBM Plex Mono';color:var(--muted);border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:150px 1fr;padding:17px 0;border-bottom:1px solid var(--line)}.row b{color:var(--cyan);font-weight:500}.row span{color:#c4d4d6}
+.workGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{min-height:360px;border:1px solid var(--line);background:rgba(9,16,21,.72);padding:20px;position:relative;overflow:hidden;transition:.45s}.card:hover{border-color:#3ca4ae;transform:translateY(-5px)}.card:after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 40%,rgba(53,242,255,.06),transparent 60%);transform:translateX(-100%);transition:.8s}.card:hover:after{transform:translateX(100%)}.cardNo{font:9px 'IBM Plex Mono';color:var(--cyan)}.card h3{position:absolute;left:20px;bottom:60px;font-size:47px;line-height:.86;letter-spacing:-.07em;margin:0}.card p{position:absolute;left:20px;bottom:20px;color:#668087;font:9px 'IBM Plex Mono';max-width:310px;margin:0}.node{position:absolute;right:35px;top:55px;width:130px;height:130px;border:1px solid #24616a;border-radius:50%;box-shadow:0 0 35px rgba(53,242,255,.08)}.node:before,.node:after{content:'';position:absolute;inset:22px;border:1px dashed #28727b;border-radius:50%}.node:after{inset:55px;background:var(--cyan);border:0;box-shadow:0 0 30px rgba(53,242,255,.65);animation:pulse 2s infinite}@keyframes pulse{50%{transform:scale(.55);opacity:.45}}
+.skills{display:flex;flex-wrap:wrap;gap:8px;max-width:1000px}.tag{font:10px 'IBM Plex Mono';border:1px solid var(--line);padding:13px 15px;color:#9fb7ba;background:#081116}.tag:hover{color:var(--cyan);border-color:#337982}
+.contact{min-height:85vh;display:flex;justify-content:center}.contact h2{max-width:1100px}.contact h2 strong{color:var(--cyan);font-weight:500}.mail{margin-top:45px;display:inline-block;color:var(--text);font:11px 'IBM Plex Mono';text-decoration:none;border-bottom:1px solid #38636a;padding-bottom:10px}
+footer{position:relative;z-index:8;border-top:1px solid var(--line);padding:24px 5vw;display:flex;justify-content:space-between;background:#040708;color:#50666a;font:8px 'IBM Plex Mono'}
+@media(max-width:800px){nav a:not(.connect){display:none}.hero{padding-top:100px}.hero h1{font-size:65px}.sub{display:block}.terminal{margin-top:28px}.aboutGrid,.workGrid{grid-template-columns:1fr}.row{grid-template-columns:120px 1fr}.card{min-height:330px}.node{width:105px;height:105px;right:20px}}
+</style></head><body>
+<div id="grid"></div><canvas id="webgl"></canvas><div class="scan"></div>
+<header><a class="logo" href="#home">ASHIN<span>_</span>SYS / 01</a><nav><a href="#about">01 About</a><a href="#work">02 Systems</a><a href="#skills">03 Stack</a><a class="connect" href="mailto:mezanoor.ashin@gmail.com">Connect ↗</a></nav></header>
 <main>
-<section class="hero" id="home">
-<div class="eyebrow"><span>Marketing / Management / Technology</span><span>Dhaka — Bangladesh</span></div>
-<div class="heroCopy"><h1>MEZANOOR<br><span>ASHIN.</span></h1><div class="heroSub"><p>A digital-first portfolio for a marketing and management professional exploring the space where business, technology and creative experiences meet.</p><a class="scroll" href="#about">Scroll to explore ↓</a></div></div>
-<div class="hint">Move your cursor · Explore the 3D world</div>
-</section>
-<section class="panel" id="about"><div class="panelInner"><div class="num">01 — About</div><div><h2 class="title">Business thinking.<br><em>Digital curiosity.</em></h2><p class="copy">I’m Mezanoor Rahman Ashin, a BBA graduate in Marketing with hands-on experience in client relationships, product presentations, marketing support and business operations. Alongside business, I’m building practical skills in web technology, AI and digital tools.</p><div class="stats"><div class="stat"><b>BBA · Marketing</b>Royal University of Dhaka · 2024</div><div class="stat"><b>Marketing & Management Officer</b>Shatadal AG Technology</div><div class="stat"><b>Based in</b>Dhaka, Bangladesh</div><div class="stat"><b>Interested in</b>Business · Digital · AI · Technology</div></div></div></div></section>
-<section class="panel" id="work"><div class="num">02 — Focus</div><h2 class="title" style="margin-top:28px">What I <em>bring.</em></h2><div class="cards"><article class="card"><small>01 / MARKETING</small><div class="orb"></div><h3>People<br>first.</h3><p>Client communication, presentations, marketing and sales support.</p></article><article class="card"><small>02 / MANAGEMENT</small><div class="orb"></div><h3>Make it<br>work.</h3><p>Coordination, teamwork, operations and practical problem solving.</p></article><article class="card"><small>03 / DIGITAL</small><div class="orb"></div><h3>Build<br>forward.</h3><p>WordPress, HTML, CSS, JavaScript, Python and AI tools.</p></article><article class="card"><small>04 / LEARNING</small><div class="orb"></div><h3>Keep<br>moving.</h3><p>Continuously learning at the intersection of business and technology.</p></article></div></section>
-<section class="panel" id="skills"><div class="panelInner"><div class="num">03 — Skills</div><div><h2 class="title">Tools for the<br><em>next idea.</em></h2><div class="tags"><span class="tag">Business Management</span><span class="tag">Marketing & Sales</span><span class="tag">Client Relationships</span><span class="tag">Strategic Operations</span><span class="tag">Supply Chain</span><span class="tag">Business Communication</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">AI Tools</span></div></div></div></section>
-<section class="contact" id="contact"><div class="num">04 — Contact</div><h2 style="margin-top:40px">LET’S MAKE<br><span>IT MOVE.</span></h2><a class="mail" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></section>
-</main>
-<footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Dhaka, Bangladesh · Immersive portfolio</span></footer>
+<div class="hero" id="home"><div class="meta"><span>MEZANOOR RAHMAN ASHIN // DIGITAL PROFILE</span><span class="live">SYSTEM ONLINE</span></div><div class="heroCenter"><div class="code">&gt; initializing_profile() // Dhaka, Bangladesh</div><h1>BUSINESS<br><span>MEETS</span><br>TECH.</h1><div class="sub"><p>Marketing and management professional building practical fluency across digital tools, web technology and AI.</p><div class="terminal">STATUS: <b>ACTIVE</b><br>ROLE: <em>MARKETING + MANAGEMENT</em><br>MODE: <b>LEARNING / BUILDING</b></div></div></div><div class="meta"><span>SCROLL TO NAVIGATE</span><span>v1.0.26</span></div></div>
+<section id="about"><div class="sectionHead"><div class="index">01 // PROFILE</div><h2>Human strategy.<br><span>Digital systems.</span></h2></div><div class="aboutGrid"><p>I’m Mezanoor Rahman Ashin, a BBA graduate in Marketing with experience in client relationships, product presentations, marketing support and business operations. I’m also developing hands-on skills in web technology, AI and digital tools.</p><div class="data"><div class="row"><b>EDUCATION</b><span>BBA — Marketing / Royal University of Dhaka / 2024</span></div><div class="row"><b>ROLE</b><span>Marketing & Management Officer / Shatadal AG Technology</span></div><div class="row"><b>LOCATION</b><span>Dhaka / Bangladesh</span></div><div class="row"><b>FOCUS</b><span>Business / Digital / AI / Technology</span></div></div></div></section>
+<section id="work"><div class="sectionHead"><div class="index">02 // SYSTEMS</div><h2>What I <span>work with.</span></h2></div><div class="workGrid"><article class="card"><div class="cardNo">SYS_01 / MARKETING</div><div class="node"></div><h3>CLIENT<br>NETWORKS.</h3><p>Communication / presentations / marketing & sales support</p></article><article class="card"><div class="cardNo">SYS_02 / MANAGEMENT</div><div class="node"></div><h3>BUSINESS<br>OPS.</h3><p>Coordination / teamwork / problem solving / operations</p></article><article class="card"><div class="cardNo">SYS_03 / WEB</div><div class="node"></div><h3>DIGITAL<br>BUILD.</h3><p>WordPress / HTML / CSS / JavaScript / Python</p></article><article class="card"><div class="cardNo">SYS_04 / AI</div><div class="node"></div><h3>AI<br>TOOLS.</h3><p>Exploring practical AI tools for productivity and business</p></article></div></section>
+<section id="skills"><div class="sectionHead"><div class="index">03 // STACK</div><h2>Current <span>capabilities.</span></h2></div><div class="skills"><span class="tag">BUSINESS MANAGEMENT</span><span class="tag">MARKETING & SALES</span><span class="tag">CLIENT RELATIONSHIPS</span><span class="tag">STRATEGIC OPERATIONS</span><span class="tag">SUPPLY CHAIN</span><span class="tag">BUSINESS COMMUNICATION</span><span class="tag">WORDPRESS</span><span class="tag">HTML & CSS</span><span class="tag">JAVASCRIPT</span><span class="tag">PYTHON</span><span class="tag">AI TOOLS</span></div></section>
+<section class="contact" id="contact"><div><div class="index">04 // TRANSMIT</div><h2 style="margin-top:35px">LET’S BUILD<br><strong>WHAT’S NEXT.</strong></h2><a class="mail" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
+</main><footer><span>© 2026 MEZANOOR RAHMAN ASHIN</span><span>ASHIN_SYS // END OF TRANSMISSION</span></footer>
 <script>
-const canvas=document.getElementById('webgl');
-const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
-const scene=new THREE.Scene();scene.background=new THREE.Color(0x070707);
-const camera=new THREE.PerspectiveCamera(38,innerWidth/innerHeight,.1,100);camera.position.set(0,0,8);
-scene.add(new THREE.AmbientLight(0x777777,1.2));
-const key=new THREE.PointLight(0xffffff,18,30);key.position.set(4,4,7);scene.add(key);
-const purple=new THREE.PointLight(0x6655ff,25,18);purple.position.set(-4,1,3);scene.add(purple);
-const cyan=new THREE.PointLight(0x35d9ff,12,14);cyan.position.set(3,-4,2);scene.add(cyan);
-
-const world=new THREE.Group();scene.add(world);
-const geo=new THREE.IcosahedronGeometry(2.0,7);
-const pos=geo.attributes.position;const base=[];
-for(let i=0;i<pos.count;i++)base.push(new THREE.Vector3(pos.getX(i),pos.getY(i),pos.getZ(i)));
-const mat=new THREE.MeshPhysicalMaterial({color:0x7568ff,roughness:.12,metalness:.08,transmission:.28,transparent:true,opacity:.92,clearcoat:1,clearcoatRoughness:.08,iridescence:.7,iridescenceIOR:1.4});
-const blob=new THREE.Mesh(geo,mat);world.add(blob);
-const ringMat=new THREE.MeshBasicMaterial({color:0x8d82ff,transparent:true,opacity:.38});
-for(let i=0;i<3;i++){const r=new THREE.Mesh(new THREE.TorusGeometry(2.25+i*.28,.012,12,180),ringMat);r.rotation.x=Math.PI/2+i*.55;r.rotation.y=i*.8;world.add(r)}
-const starGeo=new THREE.BufferGeometry();const count=1300;const arr=new Float32Array(count*3);
-for(let i=0;i<count*3;i++)arr[i]=(Math.random()-.5)*45;
-starGeo.setAttribute('position',new THREE.BufferAttribute(arr,3));
-const stars=new THREE.Points(starGeo,new THREE.PointsMaterial({color:0xffffff,size:.025,transparent:true,opacity:.65}));scene.add(stars);
-
-let mx=0,my=0,scroll=0;
-addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)});
-addEventListener('scroll',()=>scroll=scrollY);
-function morph(t){
- for(let i=0;i<pos.count;i++){const b=base[i];const n=1+.10*Math.sin(t*.0017+b.x*2.2+b.y*1.4)+.045*Math.sin(t*.0028+b.z*3.1);pos.setXYZ(i,b.x*n,b.y*n,b.z*n)}
- pos.needsUpdate=true;
-}
-function animate(t){
- requestAnimationFrame(animate);morph(t);
- const s=Math.min(scroll/innerHeight,4);
- world.rotation.y+=.0018;world.rotation.x=.12+my*.12;world.rotation.y+=mx*.0015;
- world.position.x=2.25-mx*.45;world.position.y=-.05+my*.25-s*.08;
- blob.rotation.z=Math.sin(t*.0004)*.18;
- stars.rotation.y=t*.000025;
- camera.position.x+=(mx*.35-camera.position.x)*.025;
- camera.position.y+=(-my*.25-camera.position.y)*.025;
- renderer.render(scene,camera);
-}
-animate(0);
-addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2))});
-</script>
-</body>
-</html>
+const r=new THREE.WebGLRenderer({canvas:document.getElementById('webgl'),antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(innerWidth,innerHeight);r.outputColorSpace=THREE.SRGBColorSpace;
+const s=new THREE.Scene(),c=new THREE.PerspectiveCamera(40,innerWidth/innerHeight,.1,100);c.position.z=8;
+s.add(new THREE.AmbientLight(0x557077,1.2));const l=new THREE.PointLight(0x35f2ff,22,25);l.position.set(4,2,6);s.add(l);const l2=new THREE.PointLight(0x8aff65,10,18);l2.position.set(-4,-2,4);s.add(l2);
+const g=new THREE.Group();s.add(g);
+const core=new THREE.Mesh(new THREE.IcosahedronGeometry(1.65,4),new THREE.MeshPhysicalMaterial({color:0x07181d,metalness:.8,roughness:.16,clearcoat:1,emissive:0x062b31,emissiveIntensity:1.2}));g.add(core);
+const wire=new THREE.Mesh(new THREE.IcosahedronGeometry(1.9,3),new THREE.MeshBasicMaterial({color:0x35f2ff,wireframe:true,transparent:true,opacity:.42}));g.add(wire);
+for(let i=0;i<5;i++){let q=new THREE.Mesh(new THREE.TorusGeometry(2.05+i*.18,.009,8,160),new THREE.MeshBasicMaterial({color:i%2?0x35f2ff:0x8aff65,transparent:true,opacity:.35}));q.rotation.x=Math.PI/2+i*.31;q.rotation.y=i*.45;g.add(q)}
+const sg=new THREE.BufferGeometry(),a=new Float32Array(900*3);for(let i=0;i<a.length;i++)a[i]=(Math.random()-.5)*38;sg.setAttribute('position',new THREE.BufferAttribute(a,3));s.add(new THREE.Points(sg,new THREE.PointsMaterial({color:0x72cbd0,size:.018,transparent:true,opacity:.55})));
+let mx=0,my=0,sy=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});addEventListener('scroll',()=>sy=scrollY);
+function loop(t){requestAnimationFrame(loop);g.rotation.y=t*.00022+mx*.18;g.rotation.x=.2+my*.14;g.position.x=2.15-mx*.45;g.position.y=-.15-sy/innerHeight*.08;wire.rotation.z=-t*.00035;core.rotation.z=t*.00018;sg.rotation.y=t*.000015;c.position.x+=(mx*.25-c.position.x)*.03;c.position.y+=(-my*.18-c.position.y)*.03;r.render(s,c)}loop(0);
+addEventListener('resize',()=>{c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();r.setSize(innerWidth,innerHeight);r.setPixelRatio(Math.min(devicePixelRatio,2))});
+</script></body></html>

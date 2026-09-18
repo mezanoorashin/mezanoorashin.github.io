@@ -80,8 +80,21 @@ footer{background:#05070c!important;color:#697586!important;border-color:rgba(25
 @keyframes floatOrb{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(45px,80px,0)}}
 @media(max-width:800px){.hero{min-height:900px}.hero-copy h1{font-size:64px!important}.photo-frame{transform:none!important}.hero-grid{perspective:none}.hero-copy{transform:none}}
 </style>
-</head>
-<body>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><style>
+/* Immersive 3D experience */
+#webgl-stage{position:fixed;inset:0;z-index:0;pointer-events:none;background:#03050a}
+body>*:not(#webgl-stage){position:relative;z-index:2}
+.hero{background:transparent!important;min-height:100vh;display:flex;align-items:center}
+.hero-grid{display:block!important;width:100%;position:relative;z-index:3}
+.hero-copy{max-width:850px;padding-top:10vh}
+.hero-copy h1{font-size:clamp(64px,12vw,190px)!important;line-height:.78!important;letter-spacing:-.08em!important;color:#fff!important;text-shadow:0 8px 50px rgba(0,0,0,.45)}
+.hero-copy p{max-width:620px;color:#d0d8e5!important;font-size:20px!important}
+.hero-grid>.photo-frame{position:absolute;right:7%;top:50%;width:min(31vw,430px);transform:translateY(-50%)!important;background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.18)!important;box-shadow:0 30px 100px rgba(0,0,0,.5)!important;backdrop-filter:blur(10px)}
+.section{background:rgba(3,5,10,.72)!important;backdrop-filter:blur(8px)}
+.section .card{background:rgba(255,255,255,.045)!important}
+@media(max-width:800px){.hero-copy{padding-top:4vh}.hero-grid>.photo-frame{position:relative;right:auto;top:auto;width:min(80vw,380px);margin:50px auto 0;transform:none!important}.hero-copy h1{font-size:68px!important}}
+</style></head>
+<body><div id="webgl-stage"></div>
 <nav><div class="container nav-inner"><a class="brand" href="#">Mezanoor Rahman Ashin</a><div class="nav-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero"><div class="container hero-grid">
@@ -106,4 +119,22 @@ footer{background:#05070c!important;color:#697586!important;border-color:rgba(25
 <section id="contact"><div class="container"><div class="contact"><div class="section-label">05 — Contact</div><h2>Let's connect.</h2><p>For professional or academic inquiries, you can reach me by email.</p><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com</a></div></div></section>
 </main>
 <footer><div class="container">© 2026 Mezanoor Rahman Ashin · Professional portfolio</div></footer>
-</body></html>
+<script>
+(()=>{const stage=document.getElementById('webgl-stage');if(!window.THREE||!stage)return;
+const scene=new THREE.Scene();scene.fog=new THREE.FogExp2(0x03050a,.045);
+const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,100);camera.position.set(0,0,8);
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;stage.appendChild(renderer.domElement);
+const group=new THREE.Group();scene.add(group);
+const geo=new THREE.IcosahedronGeometry(1.65,5);
+const mat=new THREE.MeshPhysicalMaterial({color:0x4d8cff,metalness:.12,roughness:.12,transmission:.25,thickness:1.2,transparent:true,opacity:.88,clearcoat:1,clearcoatRoughness:.08});
+const orb=new THREE.Mesh(geo,mat);group.add(orb);
+const wire=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0x9fc2ff,wireframe:true,transparent:true,opacity:.12}));wire.scale.setScalar(1.035);group.add(wire);
+const rings=[];for(let i=0;i<3;i++){const r=new THREE.Mesh(new THREE.TorusGeometry(2.15+i*.38,.008,8,160),new THREE.MeshBasicMaterial({color:0x6ea8ff,transparent:true,opacity:.28});r.rotation.x=(i+1)*.6;r.rotation.y=i*.8;group.add(r);rings.push(r)}
+const count=1100,pos=new Float32Array(count*3);for(let i=0;i<count;i++){const a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1),rad=3.2+Math.random()*5.5;pos[i*3]=Math.sin(b)*Math.cos(a)*rad;pos[i*3+1]=Math.cos(b)*rad;pos[i*3+2]=Math.sin(b)*Math.sin(a)*rad}
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xbfd8ff,size:.018,transparent:true,opacity:.7}));scene.add(pts);
+scene.add(new THREE.AmbientLight(0x6688bb,1.8));const key=new THREE.PointLight(0x5b8fff,18,20);key.position.set(3,3,5);scene.add(key);const fill=new THREE.PointLight(0x9b5cff,10,18);fill.position.set(-4,-2,2);scene.add(fill);
+let mx=0,my=0,tx=0,ty=0,scroll=0;addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5)*2;ty=(e.clientY/innerHeight-.5)*2});addEventListener('scroll',()=>scroll=scrollY,{passive:true});
+const clock=new THREE.Clock();function tick(){requestAnimationFrame(tick);const t=clock.getElapsedTime();mx+=(tx-mx)*.035;my+=(ty-my)*.035;group.rotation.y=t*.09+mx*.28;group.rotation.x=Math.sin(t*.2)*.12+my*.16;group.position.x=mx*.5;group.position.y=-scroll*.0007+my*.25;pts.rotation.y=-t*.025;pts.rotation.x=t*.012;rings.forEach((r,i)=>{r.rotation.z=t*(.08+i*.035);r.rotation.x+=.0005*(i+1)});camera.position.z=8+Math.sin(t*.2)*.18;renderer.render(scene,camera)}tick();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7))});
+})();
+</script></body></html>

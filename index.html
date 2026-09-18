@@ -1,71 +1,71 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Mezanoor Rahman Ashin — Marketing, management and technology professional.">
-<title>Mezanoor Rahman Ashin — Business meets technology</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Mezanoor Rahman Ashin — interactive portfolio.">
+<title>Mezanoor Rahman Ashin — Earth Interface</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#01040a;--fg:#f7f9fc;--muted:#9eabba;--blue:#0d9cff;--line:rgba(255,255,255,.13)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
-#space{position:fixed;inset:-2%;width:104%;height:104%;z-index:-20;background:#01040a url("https://svs.gsfc.nasa.gov/vis/a000000/a003900/a003921/stars.1800_print.jpg") center/cover no-repeat;transition:transform .18s ease-out}
-#space:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 52%,rgba(0,86,170,.18),transparent 30%),linear-gradient(90deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.16) 47%,rgba(0,0,0,.06) 100%)}
-nav{position:fixed;top:0;left:0;right:0;height:92px;padding:0 5.2vw;display:flex;align-items:center;justify-content:space-between;z-index:20;background:linear-gradient(180deg,rgba(0,3,8,.78),rgba(0,3,8,0));}
-.brand{font-size:13px;font-weight:800;letter-spacing:.08em}.links{display:flex;gap:34px}.links a{color:#dce5ef;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.04em}.links a:hover{color:#28a9ff}
-.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:90px 5.2vw 72px;overflow:hidden}
-.hero-copy{position:relative;z-index:8;width:min(560px,43vw);margin-top:-12px;text-shadow:0 3px 28px rgba(0,0,0,.42)}
-.eyebrow{display:flex;align-items:center;gap:12px;color:#dce6f0;font-size:10px;font-weight:800;letter-spacing:.25em;margin-bottom:24px}.eyebrow:before{content:"";width:26px;height:2px;background:#119eff;box-shadow:0 0 18px #119eff}
-h1{font-family:"Space Grotesk";font-size:clamp(58px,6.2vw,94px);line-height:.91;letter-spacing:-.07em;margin:0;font-weight:600}h1 span{color:#129fff}
-.lead{font-size:15px;line-height:1.72;color:#b7c3d1;max-width:505px;margin:28px 0 31px}.actions{display:flex;gap:12px}.btn{height:52px;padding:0 24px;border-radius:7px;display:inline-flex;align-items:center;text-decoration:none;font-size:12px;font-weight:800;transition:.25s}.primary{color:#fff;background:#078df5;box-shadow:0 12px 32px rgba(0,126,239,.24)}.primary:hover{transform:translateY(-2px);background:#19a5ff}.secondary{color:#fff;border:1px solid rgba(210,225,240,.55);background:rgba(2,7,13,.2)}.secondary:hover{transform:translateY(-2px);border-color:#20a7ff}
-.bottom{position:absolute;bottom:29px;left:5.2vw;right:5.2vw;display:flex;justify-content:space-between;z-index:8;color:#8f9eaf;font-size:10px}.scroll{display:flex;gap:11px;align-items:center}.mouse{width:20px;height:31px;border:1.5px solid #e9f0f6;border-radius:14px;position:relative}.mouse:after{content:"";position:absolute;top:6px;left:8px;width:2px;height:6px;border-radius:3px;background:#fff;animation:d 1.5s infinite}@keyframes d{50%{transform:translateY(8px);opacity:.25}}.loc{text-align:right;line-height:1.65}.loc b{display:block;color:#edf4fb}
-section{padding:140px 7vw;background:rgba(1,4,9,.94);border-top:1px solid var(--line)}.label{font-size:10px;font-weight:800;letter-spacing:.2em;color:#18a1ff}.title{font-family:"Space Grotesk";font-size:clamp(52px,7vw,100px);line-height:.9;letter-spacing:-.065em;margin:18px 0 45px}.dim{color:#77879a}.statement{font-size:clamp(25px,3.4vw,48px);line-height:1.1;max-width:1050px}.experience{max-width:1050px;border-top:1px solid var(--line)}.exp{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:35px 0;border-bottom:1px solid var(--line)}.exp h3{font:600 28px "Space Grotesk";margin:0 0 9px}.meta{font-size:11px;color:#19a2ff;font-weight:700}.exp p,.exp li{color:#a8b5c7;line-height:1.7}.skills{display:flex;flex-wrap:wrap;gap:9px;max-width:1050px}.tag{padding:11px 15px;border:1px solid #263447;border-radius:999px;color:#bac6d5}.email{font:600 clamp(28px,5vw,68px) "Space Grotesk";color:#fff;text-decoration:none;border-bottom:1px solid #536274}
-.reveal{opacity:0;transform:translateY(35px);transition:.8s}.reveal.show{opacity:1;transform:none}footer{padding:28px 7vw;border-top:1px solid var(--line);color:#718095;font-size:11px;display:flex;justify-content:space-between}
-@media(max-width:1100px){.hero-copy{width:min(560px,50vw)}h1{font-size:clamp(54px,6.7vw,82px)}}
-@media(max-width:800px){.links{display:none}.hero{padding:110px 24px 80px;align-items:flex-start;padding-top:24vh}.hero-copy{width:100%;max-width:520px}.lead{font-size:14px}h1{font-size:57px}.bottom{left:24px;right:24px}.loc{display:none}section{padding:100px 24px}.exp{grid-template-columns:1fr}}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--cyan:#27b9ff;--blue:#167dff;--white:#f4f8fc;--muted:#8d9bad;--glass:rgba(5,13,23,.68);--line:rgba(170,210,240,.18)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#010409;color:var(--white);font-family:Inter,Arial,sans-serif}button,a{font:inherit}
+#space{position:fixed;inset:0;background:#010409 url('https://svs.gsfc.nasa.gov/vis/a000000/a003900/a003921/stars.1800_print.jpg') center/cover no-repeat;z-index:-10;transform:scale(1.04)}
+#space:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,rgba(0,86,160,.15),transparent 35%),linear-gradient(90deg,rgba(0,0,0,.48),rgba(0,0,0,.05) 55%,rgba(0,0,0,.35))}
+#earth{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block}
+header{position:fixed;top:0;left:0;right:0;height:82px;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0 30px;background:linear-gradient(180deg,rgba(0,4,9,.86),rgba(0,4,9,.15),transparent);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{display:flex;align-items:center;gap:13px}.mark{width:28px;height:28px;border:1px solid #46c5ff;border-radius:50%;position:relative;box-shadow:0 0 18px rgba(35,178,255,.25)}.mark:after{content:'';position:absolute;left:5px;right:5px;top:13px;height:1px;background:#46c5ff;transform:rotate(-25deg)}.name{font-size:13px;font-weight:700;letter-spacing:.11em}.sub{display:block;color:#74869b;font-size:8px;letter-spacing:.22em;margin-top:4px}
+.topnav{display:flex;gap:25px}.topnav a{color:#aebdcb;text-decoration:none;font-size:11px}.topnav a.active,.topnav a:hover{color:#fff}
+.toolbar{position:fixed;top:102px;right:28px;z-index:12;display:flex;gap:8px}.tool{width:38px;height:38px;border:1px solid var(--line);background:rgba(3,11,19,.62);backdrop-filter:blur(12px);color:#c7d5e2;border-radius:6px;cursor:pointer}.tool:hover{border-color:#36baff;color:#fff}
+.left{position:fixed;left:26px;top:115px;bottom:30px;width:238px;z-index:12;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.panel{pointer-events:auto;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);box-shadow:0 20px 70px rgba(0,0,0,.3);border-radius:8px}
+.info{padding:18px}.eyebrow{font-size:8px;letter-spacing:.22em;color:#42c5ff;font-weight:700}.info h1{font:600 31px/1.02 'Space Grotesk';letter-spacing:-.04em;margin:11px 0 12px}.info p{font-size:11px;line-height:1.65;color:#aab7c5;margin:0}.coords{margin-top:17px;padding-top:13px;border-top:1px solid var(--line);font-size:9px;color:#718396;display:flex;justify-content:space-between}.coords b{color:#dce8f2;font-weight:500}
+.menu{padding:8px}.menu a{display:flex;align-items:center;gap:10px;color:#91a1b1;text-decoration:none;padding:11px 10px;border-radius:5px;font-size:10px}.menu a:hover,.menu a.on{color:#fff;background:rgba(38,150,224,.13)}.dot{width:5px;height:5px;border-radius:50%;background:#53677b}.on .dot{background:#31baff;box-shadow:0 0 10px #31baff}
+.right{position:fixed;right:27px;bottom:28px;width:245px;z-index:12}.data{padding:16px}.data h2{font:600 17px 'Space Grotesk';margin:5px 0 14px}.row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:9px 0;font-size:9px;color:#75879a}.row b{color:#d8e3ec;font-weight:500}.cta{display:block;margin-top:12px;text-align:center;text-decoration:none;color:#fff;background:#0a8ff0;border-radius:5px;padding:11px;font-size:10px;font-weight:700}.hint{color:#64768a;font-size:8px;line-height:1.6;margin-top:11px}
+.bottom{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:12;text-align:center;color:#697b8d;font-size:8px;letter-spacing:.12em}.cross{width:24px;height:24px;margin:0 auto 8px;position:relative}.cross:before,.cross:after{content:'';position:absolute;background:#8ea1b4}.cross:before{width:24px;height:1px;top:11px;left:0}.cross:after{width:1px;height:24px;left:11px;top:0}
+.badge{position:fixed;left:50%;top:98px;transform:translateX(-50%);z-index:12;color:#8496a9;font-size:8px;letter-spacing:.2em;text-transform:uppercase;padding:8px 13px;border:1px solid var(--line);background:rgba(3,9,16,.45);backdrop-filter:blur(10px);border-radius:20px}
+@media(max-width:850px){.left{width:190px;left:14px}.right{right:14px;width:190px}.topnav{display:none}.info h1{font-size:25px}.toolbar{right:14px}.badge{top:88px}.right{bottom:14px}}
+@media(max-width:600px){.left{top:100px;width:170px}.info p{display:none}.right{display:none}.name{font-size:10px}.logo .sub{display:none}}
 </style>
 </head>
 <body>
-<div id="space"></div>
-<nav><div class="brand">MEZANOOR RAHMAN ASHIN</div><div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
-
-<header class="hero" id="home">
-<div class="hero-copy reveal">
-<div class="eyebrow">BUSINESS · TECHNOLOGY · GROWTH</div>
-<h1>Business<br><span>meets technology</span></h1>
-<p class="lead">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and business operations.</p>
-<div class="actions"><a class="btn primary" href="#experience">View My Work&nbsp; →</a><a class="btn secondary" href="#contact">Get in Touch</a></div>
-</div>
-<div class="bottom"><div class="scroll"><div class="mouse"></div><span>Scroll to explore</span></div><div class="loc"><b>⌖ Dhaka, Bangladesh</b>Building a better tomorrow.</div></div>
-</header>
-
-<section id="about"><div class="reveal"><div class="label">01 — ABOUT</div><h2 class="title">Business<br><span class="dim">meets technology.</span></h2><p class="statement">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and business operations.</p></div></section>
-<section id="experience"><div class="reveal"><div class="label">02 — EXPERIENCE</div><h2 class="title">What I<br><span class="dim">do.</span></h2><div class="experience"><div class="exp"><div><h3>Marketing & Management Officer</h3><div class="meta">SHATADAL AG TECHNOLOGY · SEP 2024 — PRESENT</div></div><ul><li>Client relationships and business communication.</li><li>Product presentations and marketing activities.</li><li>Daily operations and coordination.</li><li>Management and operational support.</li></ul></div></div></div></section>
-<section><div class="reveal"><div class="label">03 — EDUCATION</div><h2 class="title">Academic<br><span class="dim">foundation.</span></h2><div class="experience"><div class="exp"><div><h3>BBA — Marketing</h3><div class="meta">ROYAL UNIVERSITY OF DHAKA · 2024</div></div><p>CGPA 3.64</p></div><div class="exp"><div><h3>HSC</h3><div class="meta">MILESTONE COLLEGE · 2015</div></div><p>GPA 4.00</p></div><div class="exp"><div><h3>SSC</h3><div class="meta">CIVIL AVIATION HIGH SCHOOL · 2013</div></div><p>GPA 3.63</p></div></div></div></section>
-<section id="skills"><div class="reveal"><div class="label">04 — CAPABILITIES</div><h2 class="title">Skills &<br><span class="dim">interests.</span></h2><div class="skills"><span class="tag">Business Management</span><span class="tag">Marketing & Sales Support</span><span class="tag">Client Relationship Management</span><span class="tag">Business Communication</span><span class="tag">Supply Chain Management</span><span class="tag">Strategic Operations</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Artificial Intelligence</span><span class="tag">AI Tools</span></div></div></section>
-<section id="contact"><div class="reveal"><div class="label">05 — CONTACT</div><h2 class="title">Let's make<br><span class="dim">something.</span></h2><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
-<footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Immersive portfolio</span></footer>
-
+<div id="space"></div><canvas id="earth"></canvas>
+<header><a class="logo" href="#home" style="text-decoration:none;color:inherit"><span class="mark"></span><span><span class="name">MEZANOOR RAHMAN ASHIN</span><span class="sub">BUSINESS · TECHNOLOGY · GROWTH</span></span></a><nav class="topnav"><a class="active" href="#home">EARTH</a><a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#skills">SKILLS</a><a href="#contact">CONTACT</a></nav></header>
+<div class="badge">INTERACTIVE EARTH · PORTFOLIO MODE</div>
+<div class="toolbar"><button class="tool" id="reset" title="Reset view">⌂</button><button class="tool" id="zoomIn">+</button><button class="tool" id="zoomOut">−</button></div>
+<aside class="left">
+<div class="panel info"><div class="eyebrow">MEZANOOR RAHMAN ASHIN</div><h1>Business<br><span style="color:#20adff">meets technology.</span></h1><p>Marketing and management professional exploring the intersection of business, technology and growth.</p><div class="coords"><span>LOCATION</span><b>DHAKA, BD</b></div></div>
+<div class="panel menu"><a class="on" href="#home"><span class="dot"></span>Overview</a><a href="#about"><span class="dot"></span>About me</a><a href="#experience"><span class="dot"></span>Experience</a><a href="#skills"><span class="dot"></span>Capabilities</a><a href="#contact"><span class="dot"></span>Contact</a></div>
+</aside>
+<div class="right"><div class="panel data"><div class="eyebrow">PROFILE DATA</div><h2>Mezanoor Rahman Ashin</h2><div class="row"><span>ROLE</span><b>Marketing & Management</b></div><div class="row"><span>EDUCATION</span><b>BBA · Marketing</b></div><div class="row"><span>BASE</span><b>Dhaka, Bangladesh</b></div><a class="cta" href="mailto:mezanoor.ashin@gmail.com">CONTACT ME</a><div class="hint">Drag the Earth to rotate · Scroll to zoom · Use the controls to reset the view.</div></div></div>
+<div class="bottom"><div class="cross"></div>DRAG TO EXPLORE EARTH</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
-const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,innerWidth/innerHeight,.1,100);
-camera.position.z=6.4;
-const earthCanvas=document.createElement('canvas');earthCanvas.id='earth';earthCanvas.style.cssText='position:fixed;inset:0;width:100%;height:100%;z-index:-4;pointer-events:none;';document.body.appendChild(earthCanvas);
-const renderer=new THREE.WebGLRenderer({canvas:earthCanvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
-const group=new THREE.Group();group.position.set(2.85,.02,.25);scene.add(group);
+const canvas=document.getElementById('earth');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,innerWidth/innerHeight,.1,100);
+camera.position.set(0.15,.15,5.4);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
+const controls=new THREE.OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;controls.dampingFactor=.045;controls.enablePan=false;controls.minDistance=3.15;controls.maxDistance=8;controls.rotateSpeed=.35;controls.zoomSpeed=.55;
 const loader=new THREE.TextureLoader();loader.crossOrigin='anonymous';
-const day=loader.load('https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png?v=2');
-const night=loader.load('https://svs.gsfc.nasa.gov/vis/a030000/a030000/a030003/earth_lights_print.jpg?v=2');
-const cloud=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png?v=2');
-const sun=new THREE.DirectionalLight(0xffffff,2.7);sun.position.set(-3,1.7,5);scene.add(sun);scene.add(new THREE.AmbientLight(0x7d91aa,.15));
-const mat=new THREE.ShaderMaterial({uniforms:{dayMap:{value:day},nightMap:{value:night},sunDir:{value:new THREE.Vector3(-.55,.25,.78).normalize()}},vertexShader:'varying vec2 vUv;varying vec3 vN;void main(){vUv=uv;vN=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'uniform sampler2D dayMap;uniform sampler2D nightMap;uniform vec3 sunDir;varying vec2 vUv;varying vec3 vN;void main(){vec3 d=texture2D(dayMap,vUv).rgb;vec3 n=texture2D(nightMap,vUv).rgb;float l=dot(normalize(vN),sunDir);float dayAmt=smoothstep(-.12,.24,l);vec3 city=n*vec3(1.,.68,.22)*1.5;vec3 c=mix(city,d,dayAmt);c*=.98+.18*max(l,0.);gl_FragColor=vec4(c,1.);}'}});
-const earth=new THREE.Mesh(new THREE.SphereGeometry(2.12,128,128),mat);group.add(earth);
-const clouds=new THREE.Mesh(new THREE.SphereGeometry(2.145,128,128),new THREE.MeshPhongMaterial({map:cloud,transparent:true,opacity:.19,depthWrite:false}));group.add(clouds);
-const glow=new THREE.Mesh(new THREE.SphereGeometry(2.28,96,96),new THREE.MeshBasicMaterial({color:0x4caeff,transparent:true,opacity:.045,side:THREE.BackSide}));group.add(glow);
-let tx=0,ty=0,cx=0,cy=0;addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});
-function animate(){requestAnimationFrame(animate);cx+=(tx-cx)*.035;cy+=(ty-cy)*.035;group.position.x=2.85+cx*.55;group.position.y=.02-cy*.32;group.rotation.y+=.0008;group.rotation.x=cy*.035;clouds.rotation.y+=.0016;renderer.render(scene,camera)}animate();
+const day=loader.load('https://svs.gsfc.nasa.gov/vis/a000000/a002900/a002915/bluemarble-2048.png');
+const night=loader.load('https://svs.gsfc.nasa.gov/vis/a030000/a030000/a030003/earth_lights_print.jpg');
+const clouds=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png');
+scene.add(new THREE.AmbientLight(0x7894ad,.18));
+const sun=new THREE.DirectionalLight(0xffffff,2.8);sun.position.set(-3,1.4,5);scene.add(sun);
+const mat=new THREE.ShaderMaterial({uniforms:{dayMap:{value:day},nightMap:{value:night},sunDir:{value:new THREE.Vector3(-.5,.18,.82).normalize()}},vertexShader:'varying vec2 vUv;varying vec3 vN;void main(){vUv=uv;vN=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'uniform sampler2D dayMap;uniform sampler2D nightMap;uniform vec3 sunDir;varying vec2 vUv;varying vec3 vN;void main(){vec3 d=texture2D(dayMap,vUv).rgb;vec3 n=texture2D(nightMap,vUv).rgb;float l=dot(normalize(vN),sunDir);float a=smoothstep(-.08,.25,l);vec3 c=mix(n*vec3(1.,.7,.25)*1.25,d,a);c*=.96+.18*max(l,0.);gl_FragColor=vec4(c,1.);}'});
+const earth=new THREE.Mesh(new THREE.SphereGeometry(2.05,128,128),mat);scene.add(earth);
+const cloudMesh=new THREE.Mesh(new THREE.SphereGeometry(2.075,128,128),new THREE.MeshPhongMaterial({map:clouds,transparent:true,opacity:.16,depthWrite:false}));scene.add(cloudMesh);
+const glow=new THREE.Mesh(new THREE.SphereGeometry(2.18,96,96),new THREE.MeshBasicMaterial({color:0x47b8ff,transparent:true,opacity:.055,side:THREE.BackSide}));scene.add(glow);
+const orbit=new THREE.Mesh(new THREE.TorusGeometry(2.25,.006,8,256),new THREE.MeshBasicMaterial({color:0x31baff,transparent:true,opacity:.22}));orbit.rotation.x=.62;orbit.rotation.z=-.22;scene.add(orbit);
+function reset(){camera.position.set(.15,.15,5.4);controls.target.set(0,0,0);controls.update()}
+document.getElementById('reset').onclick=reset;
+document.getElementById('zoomIn').onclick=()=>camera.position.multiplyScalar(.82);
+document.getElementById('zoomOut').onclick=()=>camera.position.multiplyScalar(1.22);
+function animate(){requestAnimationFrame(animate);controls.update();cloudMesh.rotation.y+=.00055;orbit.rotation.z+=.00012;renderer.render(scene,camera)}
+animate();
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 </script>
 </body>
 </html>

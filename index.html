@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root{--bg:#050505;--fg:#f4f2eb;--muted:#96938b;--acid:#d9ff35;--line:rgba(255,255,255,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif;overflow-x:hidden}
-#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
 nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:25px 4.5vw;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}.brand{font-size:13px;font-weight:700;letter-spacing:.02em}.links{display:flex;gap:27px}.links a{color:#fff;text-decoration:none;font-size:12px}
 .hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:100px 6vw}.hero-copy{position:relative;z-index:4;max-width:900px;text-shadow:0 2px 20px rgba(0,0,0,.35)}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--acid);font-weight:700;margin-bottom:24px}.hero h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;font-weight:600;margin:0;color:#fff}.hero h1 span{display:block;color:#fff;-webkit-text-stroke:0}.lead{max-width:510px;margin:38px 0 0;color:#aaa69d;font-size:17px;line-height:1.65}.hero-ui{position:absolute;bottom:38px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:#77736c;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.hero-ui b{color:var(--acid);font-weight:500}
 section{position:relative;padding:150px 7vw}.number{color:var(--acid);font-size:10px;letter-spacing:.2em}.title{font-family:"Space Grotesk";font-size:clamp(52px,8vw,115px);line-height:.88;letter-spacing:-.065em;font-weight:500;margin:20px 0 60px}.title .dim{color:#6d6a64}.statement{font-family:"Space Grotesk";font-size:clamp(28px,4.2vw,58px);line-height:1.02;letter-spacing:-.045em;max-width:1000px}.statement .dim{color:#77736d}
@@ -46,6 +46,106 @@ footer{padding:30px 7vw;border-top:1px solid var(--line);color:#5f5c56;font-size
 <footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Immersive portfolio</span></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas=document.getElementById('webgl');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
+camera.position.z=7;
+
+const earthGroup=new THREE.Group();
+earthGroup.position.set(2.65,0.1,0);
+earthGroup.scale.setScalar(1.55);
+scene.add(earthGroup);
+
+scene.add(new THREE.AmbientLight(0xffffff,.28));
+const sun=new THREE.DirectionalLight(0xffffff,2.8);sun.position.set(-4,2,5);scene.add(sun);
+const blueRim=new THREE.PointLight(0x168cff,22,14);blueRim.position.set(4,-2,4);scene.add(blueRim);
+
+const loader=new THREE.TextureLoader();
+const earthTexture=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
+const earth=new THREE.Mesh(
+ new THREE.SphereGeometry(1.5,72,72),
+ new THREE.MeshPhongMaterial({map:earthTexture,shininess:28})
+);
+earthGroup.add(earth);
+
+const cloudsTexture=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png');
+const clouds=new THREE.Mesh(
+ new THREE.SphereGeometry(1.525,72,72),
+ new THREE.MeshPhongMaterial({map:cloudsTexture,transparent:true,opacity:.48,depthWrite:false})
+);
+earthGroup.add(clouds);
+
+const atmosphere=new THREE.Mesh(
+ new THREE.SphereGeometry(1.64,72,72),
+ new THREE.MeshBasicMaterial({color:0x4aa8ff,transparent:true,opacity:.12,side:THREE.BackSide})
+);
+earthGroup.add(atmosphere);
+
+// Moving star field
+const starCount=1700, positions=new Float32Array(starCount*3), sizes=new Float32Array(starCount), phases=new Float32Array(starCount);
+for(let i=0;i<starCount;i++){
+ positions[i*3]=(Math.random()-.5)*15;
+ positions[i*3+1]=(Math.random()-.5)*9;
+ positions[i*3+2]=(Math.random()-.5)*8-1;
+ sizes[i]=Math.random()*.035+.008;
+ phases[i]=Math.random()*Math.PI*2;
+}
+const starGeo=new THREE.BufferGeometry();
+starGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+starGeo.setAttribute('size',new THREE.BufferAttribute(sizes,1));
+const starMat=new THREE.PointsMaterial({color:0xffffff,size:.022,transparent:true,opacity:.8,sizeAttenuation:true});
+const stars=new THREE.Points(starGeo,starMat);
+scene.add(stars);
+
+// A second layer creates gentle parallax.
+const farStars=stars.clone();
+farStars.material=starMat.clone();
+farStars.material.size=.012;
+farStars.material.opacity=.45;
+farStars.position.z=-2;
+scene.add(farStars);
+
+let targetX=0,targetY=0;
+addEventListener('pointermove',e=>{
+ targetX=(e.clientX/innerWidth-.5);
+ targetY=(e.clientY/innerHeight-.5);
+});
+
+let time=0;
+function animate(){
+ requestAnimationFrame(animate);
+ time+=.012;
+
+ // Earth rotates continuously and follows the cursor with smooth 3D parallax.
+ earth.rotation.y+=.0018;
+ clouds.rotation.y+=.0024;
+ earthGroup.rotation.y+=(targetX*.34-earthGroup.rotation.y)*.035;
+ earthGroup.rotation.x+=(targetY*.18-earthGroup.rotation.x)*.035;
+ earthGroup.position.x+=(2.65+targetX*.42-earthGroup.position.x)*.025;
+ earthGroup.position.y+=(0.1-targetY*.18-earthGroup.position.y)*.025;
+
+ // Stars drift and twinkle.
+ stars.rotation.y+=.00012;
+ stars.rotation.x+=.000025;
+ farStars.rotation.y-=.00006;
+ starMat.opacity=.68+Math.sin(time*1.7)*.12;
+ farStars.material.opacity=.35+Math.sin(time*1.1+1)*.1;
+
+ renderer.render(scene,camera);
+}
+animate();
+
+addEventListener('resize',()=>{
+ camera.aspect=innerWidth/innerHeight;
+ camera.updateProjectionMatrix();
+ renderer.setSize(innerWidth,innerHeight);
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
 <script>
 const canvas=document.getElementById('webgl');
 const scene=new THREE.Scene();

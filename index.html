@@ -3,68 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mezanoor Rahman Ashin — Digital Portfolio</title>
-<meta name="description" content="Mezanoor Rahman Ashin — Marketing and Management professional exploring business, technology and AI.">
-<link rel="canonical" href="https://mezanoorashin.github.io/">
+<meta name="description" content="Mezanoor Rahman Ashin — Marketing and Management professional.">
+<meta name="author" content="Mezanoor Rahman Ashin">
+<title>Mezanoor Rahman Ashin — Immersive Portfolio</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#070707;--fg:#f5f3ed;--muted:#aaa69e;--lime:#d8ff3e;--line:rgba(255,255,255,.13)}
+:root{--bg:#050505;--fg:#f4f2eb;--muted:#96938b;--acid:#d9ff35;--line:rgba(255,255,255,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"DM Sans",sans-serif;overflow-x:hidden}
-#scene{position:fixed;inset:0;z-index:-2}#glow{position:fixed;width:48vw;height:48vw;border-radius:50%;background:radial-gradient(circle,rgba(216,255,62,.18),transparent 66%);filter:blur(45px);pointer-events:none;z-index:-1;transform:translate(-50%,-50%)}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:25px 4vw;mix-blend-mode:difference}
-.logo{font-weight:700;font-size:16px}.navlinks{display:flex;gap:28px}.navlinks a{color:#fff;text-decoration:none;font-size:13px}
-.hero{min-height:100vh;display:flex;align-items:flex-end;padding:140px 6vw 8vw;position:relative}.hero-inner{max-width:1100px}
-.eyebrow{color:var(--lime);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:25px}
-h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;margin:0;max-width:1100px;font-weight:600}
-h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(245,243,237,.7)}
-.hero-desc{max-width:610px;color:#c0bdb5;font-size:18px;line-height:1.65;margin:42px 0 0}
-.scroll{position:absolute;right:6vw;bottom:7vw;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl}
-section{padding:150px 6vw;position:relative}.section-number{font-size:11px;color:var(--lime);letter-spacing:.18em}.section-title{font-family:"Space Grotesk";font-size:clamp(45px,7vw,100px);line-height:.9;letter-spacing:-.06em;margin:22px 0 55px}
-.statement{font-family:"Space Grotesk";font-size:clamp(28px,4vw,58px);line-height:1.05;letter-spacing:-.045em;max-width:1000px}
-.muted{color:#77736d}.grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line)}.panel{background:#090909;padding:42px;min-height:260px}.panel h3{font-size:22px;margin:0 0 18px}.panel p,.panel li{color:#9e9a92;line-height:1.7}.panel ul{padding-left:18px}
-.photo-stage{min-height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo-card{width:min(440px,75vw);transform:rotate(-5deg);position:relative;box-shadow:35px 45px 100px rgba(0,0,0,.55);transition:transform .5s}.photo-card:hover{transform:rotate(0) scale(1.025)}.photo-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;filter:saturate(.88)}.photo-label{position:absolute;bottom:18px;left:18px;background:rgba(0,0,0,.68);backdrop-filter:blur(12px);padding:10px 13px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-.skills{display:flex;flex-wrap:wrap;gap:9px;max-width:1000px}.tag{border:1px solid #373737;border-radius:100px;padding:12px 17px;color:#d0cdc6;font-size:13px}.tag:hover{border-color:var(--lime);color:var(--lime)}
-.contact{min-height:85vh;display:flex;flex-direction:column;justify-content:center}.contact a{color:var(--fg);font-family:"Space Grotesk";font-size:clamp(30px,5vw,70px);text-decoration:none;border-bottom:1px solid #555;display:inline-block;width:max-content}.contact a:hover{color:var(--lime);border-color:var(--lime)}
-footer{padding:30px 6vw;color:#666;font-size:12px;border-top:1px solid var(--line)}
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
-@media(max-width:700px){.navlinks{display:none}.hero{padding:130px 7vw 18vw}.hero-desc{font-size:16px}.scroll{display:none}section{padding:100px 7vw}.grid{grid-template-columns:1fr}.panel{min-height:auto;padding:30px}.photo-stage{min-height:65vh}}
+#webgl{position:fixed;inset:0;width:100%;height:100%;z-index:-3}.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:25px 4.5vw;display:flex;align-items:center;justify-content:space-between;mix-blend-mode:difference}.brand{font-size:13px;font-weight:700;letter-spacing:.02em}.links{display:flex;gap:27px}.links a{color:#fff;text-decoration:none;font-size:12px}
+.hero{height:100svh;min-height:720px;position:relative;display:flex;align-items:center;padding:100px 6vw}.hero-copy{position:relative;z-index:2;max-width:900px}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--acid);font-weight:700;margin-bottom:24px}.hero h1{font-family:"Space Grotesk";font-size:clamp(64px,11vw,170px);line-height:.82;letter-spacing:-.075em;font-weight:600;margin:0}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7)}.lead{max-width:510px;margin:38px 0 0;color:#aaa69d;font-size:17px;line-height:1.65}.hero-ui{position:absolute;bottom:38px;left:6vw;right:6vw;display:flex;justify-content:space-between;color:#77736c;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.hero-ui b{color:var(--acid);font-weight:500}
+section{position:relative;padding:150px 7vw}.number{color:var(--acid);font-size:10px;letter-spacing:.2em}.title{font-family:"Space Grotesk";font-size:clamp(52px,8vw,115px);line-height:.88;letter-spacing:-.065em;font-weight:500;margin:20px 0 60px}.title .dim{color:#6d6a64}.statement{font-family:"Space Grotesk";font-size:clamp(28px,4.2vw,58px);line-height:1.02;letter-spacing:-.045em;max-width:1000px}.statement .dim{color:#77736d}
+.experience{border-top:1px solid var(--line)}.exp{display:grid;grid-template-columns:1fr 1fr;gap:50px;padding:45px 0;border-bottom:1px solid var(--line)}.exp h3{font:500 32px/1.05 "Space Grotesk";margin:0 0 12px}.exp .meta{color:var(--acid);font-size:12px}.exp p,.exp li{color:#929088;line-height:1.7}.exp ul{margin:0;padding-left:18px}
+.photo-section{min-height:100vh;display:grid;place-items:center;padding:100px 7vw;overflow:hidden}.photo-orbit{position:relative;width:min(430px,72vw);aspect-ratio:4/5;transform:rotate(-4deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.photo-orbit:hover{transform:rotate(0) scale(1.03)}.photo-orbit:before,.photo-orbit:after{content:"";position:absolute;border:1px solid rgba(217,255,53,.35);border-radius:50%;inset:-12%;transform:rotate(35deg) scaleY(.42)}.photo-orbit:after{inset:-20%;transform:rotate(-30deg) scaleY(.32);border-color:rgba(255,255,255,.18)}.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px;filter:saturate(.85);box-shadow:0 35px 100px #000}.photo-caption{position:absolute;left:18px;bottom:18px;background:rgba(0,0,0,.55);padding:9px 12px;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.skills{display:flex;flex-wrap:wrap;gap:9px;max-width:1050px}.tag{border:1px solid #30302d;border-radius:100px;padding:12px 16px;font-size:12px;color:#aaa69e;transition:.25s}.tag:hover{color:var(--acid);border-color:var(--acid)}
+.contact{min-height:90vh;display:flex;flex-direction:column;justify-content:center}.email{font:500 clamp(30px,5vw,78px)/1 "Space Grotesk";color:#f4f2eb;text-decoration:none;letter-spacing:-.055em;border-bottom:1px solid #555;display:inline-block;width:max-content}.email:hover{color:var(--acid);border-color:var(--acid)}
+footer{padding:30px 7vw;border-top:1px solid var(--line);color:#5f5c56;font-size:11px;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity .9s ease,transform .9s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:700px){.links{display:none}.hero{padding:120px 7vw}.hero h1{font-size:62px}.lead{font-size:15px}.hero-ui{left:7vw;right:7vw}.exp{grid-template-columns:1fr;gap:18px}.photo-section{min-height:80vh}section{padding:105px 7vw}}
 </style>
 </head>
 <body>
-<canvas id="scene"></canvas><div id="glow"></div>
-<nav><div class="logo">MEZANOOR RAHMAN ASHIN</div><div class="navlinks"><a href="#about">About</a><a href="#work">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+<canvas id="webgl"></canvas><div class="grain"></div>
+<nav><div class="brand">MEZANOOR RAHMAN ASHIN</div><div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero">
-<div class="hero-inner reveal"><div class="eyebrow">Marketing · Management · Technology</div><h1>Mezanoor<br><span>Rahman Ashin</span></h1><p class="hero-desc">A marketing and management professional building a career at the intersection of business, technology and AI.</p></div>
-<div class="scroll">Scroll to explore ↓</div>
+<div class="hero-copy reveal"><div class="eyebrow">MARKETING · MANAGEMENT · TECHNOLOGY</div><h1>Mezanoor<br><span>Rahman Ashin</span></h1><p class="lead">A marketing and management professional connecting business, technology and AI.</p></div>
+<div class="hero-ui"><span><b>●</b> Interactive portfolio</span><span>Move · Scroll · Explore</span></div>
 </header>
 
-<section id="about"><div class="reveal"><div class="section-number">01 — ABOUT</div><h2 class="section-title">Business<br><span class="muted">meets technology.</span></h2><p class="statement">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and day-to-day business operations.</p></div></section>
+<section id="about"><div class="reveal"><div class="number">01 — ABOUT</div><h2 class="title">Business<br><span class="dim">meets technology.</span></h2><p class="statement">I am a BBA graduate in Marketing with professional experience in client relationships, product presentations, marketing activities and business operations.</p></div></section>
 
-<section class="photo-stage"><div class="photo-card reveal"><img src="profile.jpg?v=5" alt="Mezanoor Rahman Ashin"><div class="photo-label">Mezanoor Rahman Ashin · Dhaka</div></div></section>
+<section class="photo-section"><div class="photo-orbit reveal"><img class="photo" src="profile.jpg?v=6" alt="Mezanoor Rahman Ashin"><div class="photo-caption">Mezanoor Rahman Ashin · Dhaka</div></div></section>
 
-<section id="work"><div class="reveal"><div class="section-number">02 — EXPERIENCE</div><h2 class="section-title">What I<br><span class="muted">do.</span></h2><div class="grid"><div class="panel"><h3>Marketing & Management Officer</h3><p style="color:#d8ff3e">Shatadal AG Technology · Sep 2024 — Present</p></div><div class="panel"><ul><li>Support client relationships and business communication.</li><li>Assist with product presentations and marketing activities.</li><li>Contribute to daily operations and coordination.</li><li>Collaborate on management and operational tasks.</li></ul></div></div></div></section>
+<section id="experience"><div class="reveal"><div class="number">02 — EXPERIENCE</div><h2 class="title">What I<br><span class="dim">do.</span></h2><div class="experience"><div class="exp"><div><h3>Marketing & Management Officer</h3><div class="meta">SHATADAL AG TECHNOLOGY · SEP 2024 — PRESENT</div></div><ul><li>Client relationships and business communication.</li><li>Product presentations and marketing activities.</li><li>Daily operations and coordination.</li><li>Management and operational support.</li></ul></div></div></div></section>
 
-<section><div class="reveal"><div class="section-number">03 — EDUCATION</div><h2 class="section-title">Academic<br><span class="muted">foundation.</span></h2><div class="grid"><div class="panel"><h3>BBA · Marketing</h3><p>Royal University of Dhaka · 2024</p><p>CGPA 3.64</p></div><div class="panel"><h3>HSC</h3><p>Milestone College · 2015</p><p>GPA 4.00</p></div><div class="panel"><h3>SSC</h3><p>Civil Aviation High School · 2013</p><p>GPA 3.63</p></div></div></div></section>
+<section><div class="reveal"><div class="number">03 — EDUCATION</div><h2 class="title">Academic<br><span class="dim">foundation.</span></h2><div class="experience"><div class="exp"><div><h3>BBA — Marketing</h3><div class="meta">ROYAL UNIVERSITY OF DHAKA · 2024</div></div><p>CGPA 3.64</p></div><div class="exp"><div><h3>HSC</h3><div class="meta">MILESTONE COLLEGE · 2015</div></div><p>GPA 4.00</p></div><div class="exp"><div><h3>SSC</h3><div class="meta">CIVIL AVIATION HIGH SCHOOL · 2013</div></div><p>GPA 3.63</p></div></div></div></section>
 
-<section id="skills"><div class="reveal"><div class="section-number">04 — CAPABILITIES</div><h2 class="section-title">Skills &<br><span class="muted">interests.</span></h2><div class="skills"><span class="tag">Business Management</span><span class="tag">Marketing & Sales</span><span class="tag">Client Relationships</span><span class="tag">Business Communication</span><span class="tag">Supply Chain</span><span class="tag">Strategic Operations</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Artificial Intelligence</span><span class="tag">AI Tools</span></div></div></section>
+<section id="skills"><div class="reveal"><div class="number">04 — CAPABILITIES</div><h2 class="title">Skills &<br><span class="dim">interests.</span></h2><div class="skills"><span class="tag">Business Management</span><span class="tag">Marketing & Sales Support</span><span class="tag">Client Relationship Management</span><span class="tag">Business Communication</span><span class="tag">Supply Chain Management</span><span class="tag">Strategic Operations</span><span class="tag">WordPress</span><span class="tag">HTML & CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Artificial Intelligence</span><span class="tag">AI Tools</span></div></div></section>
 
-<section id="contact" class="contact"><div class="reveal"><div class="section-number">05 — CONTACT</div><h2 class="section-title">Let's make<br><span class="muted">something.</span></h2><a href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
-<footer>© 2026 Mezanoor Rahman Ashin</footer>
+<section id="contact" class="contact"><div class="reveal"><div class="number">05 — CONTACT</div><h2 class="title">Let's make<br><span class="dim">something.</span></h2><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></section>
+<footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Immersive portfolio</span></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const canvas=document.getElementById('scene'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,.1,1000),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);camera.position.z=5;
-const geo=new THREE.IcosahedronGeometry(2.05,2),mat=new THREE.MeshPhysicalMaterial({color:0x10151b,metalness:.45,roughness:.22,wireframe:false,transparent:true,opacity:.72});
-const mesh=new THREE.Mesh(geo,mat);scene.add(mesh);
-const wire=new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color:0xd8ff3e,transparent:true,opacity:.16}));mesh.add(wire);
-const pts=new THREE.Points(new THREE.BufferGeometry(),new THREE.PointsMaterial({color:0xd8ff3e,size:.018,transparent:true,opacity:.65}));
-const positions=[];for(let i=0;i<700;i++){positions.push((Math.random()-.5)*12,(Math.random()-.5)*8,(Math.random()-.5)*7)}pts.geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));scene.add(pts);
-let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;document.getElementById('glow').style.left=e.clientX+'px';document.getElementById('glow').style.top=e.clientY+'px'});
-function tick(){requestAnimationFrame(tick);mesh.rotation.y+=.002+mx*.002;mesh.rotation.x+=.001+my*.001;pts.rotation.y-=.0004;renderer.render(scene,camera)}tick();
+const canvas=document.getElementById('webgl'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100),renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);camera.position.z=7;
+const group=new THREE.Group();scene.add(group);
+const ambient=new THREE.AmbientLight(0xffffff,.7);scene.add(ambient);const key=new THREE.PointLight(0xd9ff35,30,12);key.position.set(3,2,4);scene.add(key);const fill=new THREE.PointLight(0x6688ff,18,12);fill.position.set(-4,-2,3);scene.add(fill);
+const glass=new THREE.MeshPhysicalMaterial({color:0x9da7ae,metalness:.35,roughness:.12,transmission:.35,transparent:true,opacity:.82,clearcoat:1,clearcoatRoughness:.08});
+const dark=new THREE.MeshPhysicalMaterial({color:0x15191d,metalness:.75,roughness:.16,clearcoat:1});
+const torus1=new THREE.Mesh(new THREE.TorusGeometry(1.65,.38,48,160),glass);torus1.rotation.x=.7;group.add(torus1);
+const torus2=new THREE.Mesh(new THREE.TorusGeometry(1.25,.16,32,128),dark);torus2.rotation.y=1.1;torus2.rotation.x=.35;group.add(torus2);
+const sphere=new THREE.Mesh(new THREE.IcosahedronGeometry(.72,5),glass);sphere.position.set(.7,.65,.35);group.add(sphere);
+const core=new THREE.Mesh(new THREE.SphereGeometry(.28,32,32),new THREE.MeshStandardMaterial({color:0xd9ff35,emissive:0x708f00,emissiveIntensity:2}));core.position.set(-.5,-.45,.2);group.add(core);
+const particlesGeo=new THREE.BufferGeometry(),arr=[];for(let i=0;i<1000;i++)arr.push((Math.random()-.5)*12,(Math.random()-.5)*8,(Math.random()-.5)*8);particlesGeo.setAttribute('position',new THREE.Float32BufferAttribute(arr,3));const particles=new THREE.Points(particlesGeo,new THREE.PointsMaterial({color:0xd9ff35,size:.012,transparent:true,opacity:.5}));scene.add(particles);
+let tx=0,ty=0,mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});addEventListener('scroll',()=>{tx=scrollY*.00045});
+function animate(){requestAnimationFrame(animate);group.rotation.y+=(mx*.35+tx-group.rotation.y)*.025;group.rotation.x+=(my*.18-group.rotation.x)*.025;group.position.x+=(mx*1.3-group.position.x)*.025;group.position.y+=(-my*.7-group.position.y)*.025;torus1.rotation.z+=.002;torus2.rotation.z-=.003;sphere.rotation.x+=.004;sphere.rotation.y+=.006;particles.rotation.y+=.0003;renderer.render(scene,camera)}animate();
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
-const obs=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
 </script>
-</body>
-</html>
+</body></html>

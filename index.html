@@ -45,4 +45,131 @@ section{position:relative;z-index:2;padding:140px 7vw;background:linear-gradient
 const earth=document.getElementById('earth');let x=0,y=0;
 addEventListener('pointermove',e=>{x=(e.clientX/innerWidth-.5)*2;y=(e.clientY/innerHeight-.5)*2;earth.style.transform='translateY(-50%) translate3d('+x*18+'px,'+y*12+'px,0) rotateY('+x*3+'deg) rotateX('+(-y*2)+'deg)'});
 </script>
-</body></html>
+</body></html<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas=document.getElementById('webgl');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+camera.position.z=7;
+
+// ===== STARFIELD =====
+const starGeo=new THREE.BufferGeometry();
+const starCount=2200;
+const positions=new Float32Array(starCount*3);
+const sizes=new Float32Array(starCount);
+for(let i=0;i<starCount;i++){
+  positions[i*3]=(Math.random()-.5)*16;
+  positions[i*3+1]=(Math.random()-.5)*10;
+  positions[i*3+2]=(Math.random()-.5)*8;
+  sizes[i]=Math.random()*.035+.008;
+}
+starGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+starGeo.setAttribute('size',new THREE.BufferAttribute(sizes,1));
+const starMat=new THREE.PointsMaterial({color:0xffffff,size:.018,transparent:true,opacity:.85,sizeAttenuation:true});
+const stars=new THREE.Points(starGeo,starMat);
+scene.add(stars);
+
+// Extra closer stars for visible parallax
+const nearGeo=new THREE.BufferGeometry();
+const nearPos=new Float32Array(260*3);
+for(let i=0;i<260;i++){
+  nearPos[i*3]=(Math.random()-.5)*14;
+  nearPos[i*3+1]=(Math.random()-.5)*8;
+  nearPos[i*3+2]=2+Math.random()*3;
+}
+nearGeo.setAttribute('position',new THREE.BufferAttribute(nearPos,3));
+const nearStars=new THREE.Points(nearGeo,new THREE.PointsMaterial({color:0x8fdcff,size:.032,transparent:true,opacity:.9}));
+scene.add(nearStars);
+
+// ===== EARTH =====
+const earthGroup=new THREE.Group();
+earthGroup.position.set(2.35,.05,0);
+scene.add(earthGroup);
+scene.add(new THREE.AmbientLight(0xffffff,.38));
+const sun=new THREE.DirectionalLight(0xffffff,2.8);
+sun.position.set(-4,2,5);
+scene.add(sun);
+const rim=new THREE.PointLight(0x2196ff,28,12);
+rim.position.set(4,-1,4);
+scene.add(rim);
+
+const loader=new THREE.TextureLoader();
+loader.crossOrigin='anonymous';
+const earthTexture=loader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
+const earth=new THREE.Mesh(
+  new THREE.SphereGeometry(1.48,72,72),
+  new THREE.MeshPhongMaterial({map:earthTexture,shininess:22})
+);
+earthGroup.add(earth);
+
+const cloudsTexture=loader.load('https://threejs.org/examples/textures/planets/earth_clouds_1024.png');
+const clouds=new THREE.Mesh(
+  new THREE.SphereGeometry(1.505,72,72),
+  new THREE.MeshPhongMaterial({map:cloudsTexture,transparent:true,opacity:.48,depthWrite:false})
+);
+earthGroup.add(clouds);
+
+const atmosphere=new THREE.Mesh(
+  new THREE.SphereGeometry(1.60,72,72),
+  new THREE.MeshBasicMaterial({color:0x38aaff,transparent:true,opacity:.13,side:THREE.BackSide})
+);
+earthGroup.add(atmosphere);
+
+// ===== CURSOR INTERACTION =====
+let targetX=0,targetY=0;
+let currentX=0,currentY=0;
+addEventListener('pointermove',e=>{
+  targetX=(e.clientX/innerWidth-.5);
+  targetY=(e.clientY/innerHeight-.5);
+});
+
+// Touch devices: gentle automatic motion
+let t=0;
+function animate(){
+  requestAnimationFrame(animate);
+  t+=.01;
+
+  // Earth visibly follows the cursor with smooth inertia
+  currentX+=(targetX-currentX)*.055;
+  currentY+=(targetY-currentY)*.055;
+  earthGroup.position.x=2.35+currentX*.75;
+  earthGroup.position.y=.05-currentY*.42;
+  earthGroup.rotation.y+=.0022;
+  earthGroup.rotation.x=currentY*.08;
+  clouds.rotation.y+=.0029;
+  clouds.rotation.x=currentY*.035;
+
+  // Stars move in the opposite direction for a real parallax effect
+  stars.rotation.y+=.00012;
+  stars.rotation.x+=.00004;
+  stars.position.x=-currentX*.18;
+  stars.position.y=currentY*.10;
+  nearStars.position.x=-currentX*.42;
+  nearStars.position.y=currentY*.24;
+
+  // Subtle twinkling
+  starMat.opacity=.72+Math.sin(t*1.7)*.12;
+  nearStars.material.opacity=.72+Math.sin(t*2.4+1)*.18;
+
+  renderer.render(scene,camera);
+}
+animate();
+
+addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting)e.target.classList.add('show')
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
+</body></html><style>
+.hero-copy{max-width:780px}
+@media(max-width:900px){.hero-copy{max-width:620px}#webgl{opacity:.72}}
+@media(max-width:700px){.hero{min-height:760px}.hero-copy{max-width:100%}#webgl{opacity:.5}}
+</style>

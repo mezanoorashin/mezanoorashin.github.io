@@ -61,4 +61,8 @@ const orb=document.querySelector('.orb'),hud=document.querySelector('.hud');
 let mx=0,my=0,x=0,y=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
 function loop(){x+=(mx-x)*.04;y+=(my-y)*.04;orb.style.transform='translateZ(120px) translate('+x*25+'px,'+y*25+'px)';hud.style.transform='rotateY('+x*4+'deg) rotateX('+(-y*3)+'deg)';requestAnimationFrame(loop)}loop();
 </script>
-</body></html>
+</body></html><style>
+/* Contact thumbnail: show the portrait area only, without the old gray lower section */
+.email-row{display:flex;align-items:center;gap:22px}
+.email-photo{width:104px!important;height:104px!important;display:block!important;object-fit:cover!important;object-position:center top!important;border-radius:14px!important;border:2px solid var(--green,#b7ff3c)!important;background:#fff!important}
+</style>

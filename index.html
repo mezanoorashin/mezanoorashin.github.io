@@ -1,109 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Mezanoor Rahman Ashin — Marketing and Management professional, BBA graduate, and technology enthusiast.">
-<meta name="author" content="Mezanoor Rahman Ashin">
-<meta name="robots" content="index, follow">
+<meta name="author" content="Mezanoor Rahman Ashin"><meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mezanoorashin.github.io/">
-<title>Mezanoor Rahman Ashin — 3D Portfolio</title>
-<meta property="og:title" content="Mezanoor Rahman Ashin — 3D Portfolio">
-<meta property="og:description" content="Professional profile of Mezanoor Rahman Ashin.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://mezanoorashin.github.io/">
+<title>Mezanoor Rahman Ashin — Digital Portfolio</title>
+<meta property="og:title" content="Mezanoor Rahman Ashin — Digital Portfolio"><meta property="og:type" content="profile"><meta property="og:url" content="https://mezanoorashin.github.io/">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#050505;--fg:#f4f3ef;--muted:#9b9b9b;--line:rgba(255,255,255,.13);--lime:#c8ff3d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Space Grotesk",Arial,sans-serif;overflow-x:hidden}
-a{color:inherit;text-decoration:none}.webgl{position:fixed;inset:0;z-index:0}.grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.075;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
-nav{position:fixed;top:0;left:0;width:100%;z-index:10;padding:24px 4vw;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
-.logo{font-size:13px;font-weight:700;letter-spacing:-.03em}.navlinks{display:flex;gap:28px;font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.12em}.navlinks a{opacity:.8}.navlinks a:hover{opacity:1}
-.menu{display:none;border:1px solid var(--line);padding:9px 12px;font:10px "DM Mono",monospace}
-.hero{height:100vh;min-height:760px;position:relative;z-index:3;pointer-events:none}.hero>*{pointer-events:auto}
-.hero-copy{position:absolute;left:4vw;bottom:8vh;max-width:720px}.eyebrow{font:10px "DM Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
-h1{font-size:clamp(64px,10.2vw,170px);line-height:.78;letter-spacing:-.085em;margin:0;font-weight:600}.outline{-webkit-text-stroke:1px rgba(255,255,255,.7);color:transparent}.hero-sub{margin-top:28px;font-size:14px;max-width:470px;line-height:1.5;color:#c2c2c2}
-.scrollhint{position:absolute;right:4vw;bottom:6vh;font:9px "DM Mono",monospace;letter-spacing:.16em;text-transform:uppercase;writing-mode:vertical-rl}.scrollhint:after{content:"";display:block;width:1px;height:55px;background:var(--lime);margin:12px auto 0}
-.cursor-dot{position:fixed;width:7px;height:7px;background:var(--lime);border-radius:50%;z-index:20;pointer-events:none;mix-blend-mode:difference;transform:translate(-50%,-50%)}
-main{position:relative;z-index:4}.panel{min-height:100vh;padding:13vh 7vw;display:flex;align-items:center}.panel-inner{width:100%;max-width:1200px;margin:auto}
-.section-num{font:10px "DM Mono",monospace;color:var(--lime);letter-spacing:.16em;margin-bottom:30px}.big-title{font-size:clamp(52px,8vw,130px);line-height:.82;letter-spacing:-.08em;margin:0 0 50px;font-weight:600}.big-title em{font-style:normal;color:var(--lime)}
-.intro{max-width:900px;font-size:clamp(27px,4vw,58px);line-height:1;letter-spacing:-.055em}.intro span{color:#777}
-.grid{display:grid;grid-template-columns:1fr 2fr;border-top:1px solid var(--line)}.item{padding:25px 0;border-bottom:1px solid var(--line)}.label{font:10px "DM Mono",monospace;color:#888;text-transform:uppercase;letter-spacing:.13em}.value{font-size:clamp(25px,3.5vw,55px);letter-spacing:-.06em;margin-top:8px}.desc{color:#a7a7a7;line-height:1.55;max-width:700px;margin-top:12px}
-.skills{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}.skill{font-size:clamp(24px,3vw,45px);letter-spacing:-.055em;padding:22px 0;border-bottom:1px solid var(--line)}.skill:nth-child(even){padding-left:35px;border-left:1px solid var(--line)}
-.contact{min-height:90vh;padding-bottom:8vh}.contact-box{border:1px solid var(--line);border-radius:28px;padding:45px;min-height:65vh;display:flex;flex-direction:column;justify-content:space-between;background:rgba(10,10,10,.35);backdrop-filter:blur(12px);box-shadow:0 30px 100px rgba(0,0,0,.35)}.contact-title{font-size:clamp(55px,10vw,150px);line-height:.78;letter-spacing:-.09em;margin:0}.email-row{display:flex;align-items:center;gap:24px}.email-photo{width:100px;height:125px;object-fit:cover;object-position:center top;border-radius:16px;border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 45px rgba(0,0,0,.4)}.email{font-size:clamp(22px,4vw,58px);letter-spacing:-.055em;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:5px}.email:hover{color:var(--lime)}
-footer{position:relative;z-index:5;padding:20px 4vw 35px;display:flex;justify-content:space-between;color:#777;font:9px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.12em}
-@media(max-width:700px){.navlinks{display:none}.menu{display:block}.hero{min-height:700px}.hero-copy{left:6vw;bottom:9vh}.hero-sub{font-size:13px}.scrollhint{display:none}.panel{padding:13vh 6vw}.grid{grid-template-columns:1fr}.skills{grid-template-columns:1fr}.skill:nth-child(even){padding-left:0;border-left:0}.contact-box{padding:25px;border-radius:20px}.email-row{gap:14px;align-items:center}.email-photo{width:72px;height:90px}.email{font-size:22px;word-break:break-word}footer{display:block;line-height:2.2}}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#070a0d;--panel:#0d1217;--text:#edf4f1;--muted:#84918d;--green:#54ff9b;--cyan:#35d9ff;--grid:rgba(84,255,155,.09);--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 80%);opacity:.55}
+a{color:inherit}.wrap{width:min(1320px,calc(100% - 64px));margin:auto}
+nav{position:fixed;z-index:50;top:0;left:0;width:100%;padding:22px 0;background:linear-gradient(180deg,rgba(7,10,13,.92),transparent);backdrop-filter:blur(7px)}
+.nav{display:flex;align-items:center;justify-content:space-between}.logo{font:700 13px "Space Mono";letter-spacing:.05em;text-decoration:none}.logo b{color:var(--green)}.links{display:flex;gap:28px;font:11px "Space Mono";text-transform:uppercase}.links a{text-decoration:none;color:#aab5b1}.links a:hover{color:var(--green)}.talk{font:11px "Space Mono";text-decoration:none;color:#07100b;background:var(--green);padding:10px 15px;border-radius:4px;font-weight:700}
+.hero{min-height:100vh;position:relative;display:grid;align-items:center;overflow:hidden;background:radial-gradient(circle at 75% 45%,rgba(53,217,255,.12),transparent 28%),radial-gradient(circle at 45% 80%,rgba(84,255,155,.08),transparent 30%)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;position:relative;z-index:4;padding-top:70px}.eyebrow{font:11px "Space Mono";letter-spacing:.2em;color:var(--green);margin-bottom:20px}.eyebrow:before{content:"// ";color:var(--cyan)}
+h1{font-size:clamp(68px,9vw,145px);line-height:.82;letter-spacing:-.08em;margin:0;font-weight:800}.hollow{color:transparent;-webkit-text-stroke:1px #d7e4df}.green{color:var(--green)}.hero-desc{max-width:560px;color:#aeb9b5;line-height:1.6;font-size:15px;margin:28px 0}.buttons{display:flex;gap:12px}.btn{font:11px "Space Mono";text-decoration:none;border:1px solid var(--green);padding:13px 18px}.btn.primary{background:var(--green);color:#07100b}.btn.secondary{color:var(--green)}
+.hud{height:570px;position:relative;perspective:1200px}.orb{position:absolute;left:50%;top:50%;width:330px;height:330px;margin:-165px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#eafff4 0 3%,#58ffad 12%,#087c50 40%,#04140e 72%);box-shadow:0 0 90px rgba(84,255,155,.2),inset -35px -30px 50px #000;transform:translateZ(100px);animation:orb 7s ease-in-out infinite}.orb:before{content:"";position:absolute;inset:-22px;border:1px solid rgba(84,255,155,.45);border-radius:50%;transform:rotateX(67deg) rotateZ(20deg)}.orb:after{content:"";position:absolute;inset:-55px;border:1px solid rgba(53,217,255,.2);border-radius:50%;transform:rotateY(70deg) rotateX(20deg)}
+.ring{position:absolute;left:50%;top:50%;width:500px;height:500px;margin:-250px;border:1px solid rgba(84,255,155,.2);border-radius:50%;transform:rotateX(72deg) rotateZ(-18deg);animation:ring 13s linear infinite}.ring.r2{width:390px;height:390px;margin:-195px;transform:rotateY(65deg) rotateZ(30deg);animation-direction:reverse;border-color:rgba(53,217,255,.28)}
+.scan{position:absolute;left:50%;top:50%;width:620px;height:1px;margin-left:-310px;background:linear-gradient(90deg,transparent,var(--green),transparent);box-shadow:0 0 15px var(--green);animation:scan 4s ease-in-out infinite}
+.data{position:absolute;font:9px "Space Mono";color:#79918a;line-height:1.8}.data.a{top:18%;right:3%}.data.b{bottom:15%;left:2%;color:var(--green)}.cross{position:absolute;width:20px;height:20px}.cross:before,.cross:after{content:"";position:absolute;background:var(--green)}.cross:before{width:20px;height:1px;top:9px}.cross:after{width:1px;height:20px;left:9px}.c1{top:12%;left:15%}.c2{bottom:20%;right:5%}
+@keyframes orb{0%,100%{transform:translateZ(100px) translateY(0)}50%{transform:translateZ(130px) translateY(-18px)}}@keyframes ring{to{rotate:360deg}}@keyframes scan{0%,100%{transform:translateY(-180px);opacity:.1}50%{transform:translateY(180px);opacity:.8}}
+.ticker{border-block:1px solid var(--line);background:#090d10;overflow:hidden;white-space:nowrap}.ticker-track{width:max-content;display:flex;gap:38px;padding:14px 0;font:11px "Space Mono";letter-spacing:.16em;animation:marquee 25s linear infinite}.ticker b{color:var(--green)}@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:130px 0;border-bottom:1px solid var(--line);position:relative}.section-num{font:10px "Space Mono";color:var(--green);letter-spacing:.16em;margin-bottom:28px}.title{font-size:clamp(50px,7.5vw,115px);line-height:.8;letter-spacing:-.08em;margin:0 0 55px}.title em{font-style:normal;color:var(--green)}
+.about-grid{display:grid;grid-template-columns:1.5fr .5fr;gap:80px}.statement{font-size:clamp(28px,4.4vw,62px);line-height:1;letter-spacing:-.055em;max-width:1050px}.statement span{color:#626d69}.terminal{border:1px solid var(--line);background:#090d10;padding:20px;font:11px/1.8 "Space Mono";color:#82938c}.terminal strong{color:var(--green)}
+.rows{border-top:1px solid var(--line)}.row{display:grid;grid-template-columns:180px 1fr;gap:40px;padding:30px 0;border-bottom:1px solid var(--line)}.meta{font:10px "Space Mono";color:#6f7d78;text-transform:uppercase}.value{font-size:clamp(28px,3.7vw,58px);letter-spacing:-.06em}.desc{color:#9aa7a2;line-height:1.6;max-width:760px;margin:10px 0 0}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}.skill{padding:24px 0;border-bottom:1px solid var(--line);font-size:clamp(22px,3vw,42px);letter-spacing:-.05em}.skill:nth-child(even){padding-left:35px;border-left:1px solid var(--line)}.skill:before{content:"0";color:var(--green);font:10px "Space Mono";margin-right:16px}
+.contact{background:linear-gradient(180deg,#070a0d,#0a1411);min-height:85vh;display:flex;align-items:center}.contact-box{width:100%;border:1px solid var(--line);padding:45px;position:relative;overflow:hidden}.contact-box:before{content:"SYSTEM ONLINE";position:absolute;right:35px;top:35px;color:var(--green);font:10px "Space Mono";letter-spacing:.15em}.contact-title{font-size:clamp(60px,10vw,150px);line-height:.78;letter-spacing:-.09em;margin:0 0 80px}.email-row{display:flex;align-items:center;gap:22px}.email-photo{width:100px;height:125px;object-fit:cover;object-position:center top;border:1px solid var(--green);padding:4px;background:#050805}.email{font-size:clamp(21px,4vw,58px);letter-spacing:-.05em;text-decoration:none;border-bottom:1px solid #65726d}.email:hover{color:var(--green)}
+footer{padding:22px 0 32px;display:flex;justify-content:space-between;color:#63706b;font:9px "Space Mono";text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:850px){.wrap{width:calc(100% - 36px)}.links{display:none}.hero-inner{grid-template-columns:1fr}.hud{height:430px}.orb{width:230px;height:230px;margin:-115px}.ring{width:350px;height:350px;margin:-175px}.ring.r2{width:280px;height:280px;margin:-140px}.scan{width:400px;margin-left:-200px}.about-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr;gap:14px}.skills{grid-template-columns:1fr}.skill:nth-child(even){padding-left:0;border-left:0}.contact-box{padding:25px}.contact-box:before{right:20px;top:20px}.contact-title{margin-bottom:60px}.email-row{gap:14px}.email-photo{width:72px;height:90px}.email{font-size:21px;overflow-wrap:anywhere}footer{display:block;line-height:2.2}}
 </style>
 </head>
 <body>
-<canvas class="webgl"></canvas><div class="grain"></div><div class="cursor-dot"></div>
-<nav><a class="logo" href="#home">MEZANOOR / ASHIN</a><div class="navlinks"><a href="#about">About</a><a href="#work">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><a class="menu" href="#contact">LET'S TALK</a></nav>
+<nav><div class="wrap nav"><a class="logo" href="#home">MEZANOOR<b>.</b>ASHIN</a><div class="links"><a href="#about">About</a><a href="#work">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div><a class="talk" href="#contact">LET'S TALK</a></div></nav>
 
-<header id="home" class="hero">
-<div class="hero-copy"><div class="eyebrow">Marketing · Management · Technology</div><h1>Mezanoor<br><span class="outline">Rahman</span><br>Ashin<span style="color:var(--lime)">.</span></h1><p class="hero-sub">A business professional building practical connections between people, ideas, technology and growth.</p></div>
-<div class="scrollhint">Scroll to enter</div>
-</header>
+<header id="home" class="hero"><div class="wrap hero-inner">
+<div><div class="eyebrow">Digital portfolio / 2026</div><h1>MEZANOOR<br><span class="hollow">RAHMAN</span><br><span class="green">ASHIN.</span></h1><p class="hero-desc">Marketing & Management professional exploring the intersection of business, technology, digital tools and AI.</p><div class="buttons"><a class="btn primary" href="#work">VIEW EXPERIENCE ↘</a><a class="btn secondary" href="#contact">CONTACT ↗</a></div></div>
+<div class="hud"><div class="orb"></div><div class="ring"></div><div class="ring r2"></div><div class="scan"></div><div class="cross c1"></div><div class="cross c2"></div><div class="data a">CORE / BUSINESS<br>MODE / ACTIVE<br>AI / EXPLORING<br>LOCATION / DHAKA</div><div class="data b">01 — MARKETING<br>02 — MANAGEMENT<br>03 — TECHNOLOGY</div></div>
+</div></header>
+
+<div class="ticker"><div class="ticker-track"><span>MEZANOOR RAHMAN ASHIN</span><b>///</b><span>BUSINESS</span><b>///</b><span>MARKETING</span><b>///</b><span>MANAGEMENT</span><b>///</b><span>TECHNOLOGY</span><b>///</b><span>AI</span><b>///</b><span>MEZANOOR RAHMAN ASHIN</span><b>///</b><span>BUSINESS</span><b>///</b><span>MARKETING</span><b>///</b><span>MANAGEMENT</span><b>///</b><span>TECHNOLOGY</span><b>///</b><span>AI</span></div></div>
 
 <main>
-<section id="about" class="panel"><div class="panel-inner"><div class="section-num">01 / ABOUT</div><h2 class="big-title">BUSINESS<br>MEETS <em>IMAGINATION</em></h2><p class="intro">I connect business, communication and technology through practical experience, continuous learning and curiosity. <span>My work sits where people, operations and digital tools meet.</span></p></div></section>
+<section id="about"><div class="wrap"><div class="section-num">01 / ABOUT</div><h2 class="title">BUSINESS<br>× <em>TECHNOLOGY</em></h2><div class="about-grid"><p class="statement">I connect <span>business, communication and technology</span> through practical experience, continuous learning and curiosity.</p><div class="terminal">> profile.load()<br><strong>STATUS: ONLINE</strong><br>focus: business + tech<br>interest: AI / digital tools<br>mode: continuous learning</div></div></div></section>
 
-<section id="work" class="panel"><div class="panel-inner"><div class="section-num">02 / EXPERIENCE</div><h2 class="big-title">REAL<br><em>WORK.</em></h2><div class="grid"><div class="item"><div class="label">Sep 2024 — Present</div></div><div class="item"><div class="value">Marketing & Management Officer</div><div class="label" style="margin-top:9px">Shatadal AG Technology</div><p class="desc">Supporting client relationships, product presentations, marketing activities, business communication and day-to-day business operations.</p></div><div class="item"><div class="label">Core work</div></div><div class="item"><p class="desc">Client relations · Marketing support · Product presentations · Business communication · Operations · Team coordination</p></div></div></div></section>
+<section id="work"><div class="wrap"><div class="section-num">02 / EXPERIENCE</div><h2 class="title">PROFESSIONAL<br><em>EXPERIENCE.</em></h2><div class="rows"><div class="row"><div class="meta">SEP 2024 — PRESENT</div><div><div class="value">Marketing & Management Officer</div><div class="meta" style="margin-top:9px">Shatadal AG Technology</div><p class="desc">Supporting client relationships, product presentations, marketing activities, business communication and day-to-day business operations.</p></div></div><div class="row"><div class="meta">CORE WORK</div><div><p class="desc">Client relations · Marketing support · Product presentations · Business communication · Operations · Team coordination</p></div></div></div></div></section>
 
-<section id="education" class="panel"><div class="panel-inner"><div class="section-num">03 / EDUCATION</div><h2 class="big-title">ACADEMIC<br><em>PATH.</em></h2><div class="grid"><div class="item"><div class="label">2024</div></div><div class="item"><div class="value">BBA — Marketing</div><p class="desc">Royal University of Dhaka · CGPA 3.64</p></div><div class="item"><div class="label">2015</div></div><div class="item"><div class="value">Higher Secondary Certificate</div><p class="desc">Milestone College · GPA 4.00</p></div><div class="item"><div class="label">2013</div></div><div class="item"><div class="value">Secondary School Certificate</div><p class="desc">Civil Aviation High School · GPA 3.63</p></div></div></div></section>
+<section id="education"><div class="wrap"><div class="section-num">03 / EDUCATION</div><h2 class="title">ACADEMIC<br><em>DATA.</em></h2><div class="rows"><div class="row"><div class="meta">2024</div><div><div class="value">BBA — Marketing</div><p class="desc">Royal University of Dhaka · CGPA 3.64</p></div></div><div class="row"><div class="meta">2015</div><div><div class="value">Higher Secondary Certificate</div><p class="desc">Milestone College · GPA 4.00</p></div></div><div class="row"><div class="meta">2013</div><div><div class="value">Secondary School Certificate</div><p class="desc">Civil Aviation High School · GPA 3.63</p></div></div></div></div></section>
 
-<section id="skills" class="panel"><div class="panel-inner"><div class="section-num">04 / CAPABILITIES</div><h2 class="big-title">WHAT I<br><em>WORK WITH.</em></h2><div class="skills"><div class="skill">Business Management</div><div class="skill">Marketing & Sales</div><div class="skill">Client Relations</div><div class="skill">Strategic Operations</div><div class="skill">Supply Chain</div><div class="skill">Business Communication</div><div class="skill">WordPress · HTML · CSS</div><div class="skill">Basic JavaScript · Python</div><div class="skill">Microsoft Office</div><div class="skill">AI Tools</div></div></div></section>
+<section id="skills"><div class="wrap"><div class="section-num">04 / CAPABILITIES</div><h2 class="title">TECH<br><em>STACK.</em></h2><div class="skills"><div class="skill">Business Management</div><div class="skill">Marketing & Sales</div><div class="skill">Client Relations</div><div class="skill">Strategic Operations</div><div class="skill">Supply Chain</div><div class="skill">Business Communication</div><div class="skill">WordPress · HTML · CSS</div><div class="skill">Basic JavaScript · Python</div><div class="skill">Microsoft Office</div><div class="skill">AI Tools</div></div></div></section>
 
-<section id="contact" class="panel contact"><div class="panel-inner"><div class="contact-box"><div><div class="section-num">05 / CONTACT</div><h2 class="contact-title">LET'S<br>CONNECT<span style="color:var(--lime)">.</span></h2></div><div><div class="label" style="margin-bottom:20px">Professional & academic inquiries</div><div class="email-row"><img class="email-photo" src="email-photo.jpg?v=2" alt="Mezanoor Rahman Ashin"><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></div></div></div></section>
+<section id="contact" class="contact"><div class="wrap"><div class="contact-box"><div class="section-num">05 / CONTACT</div><h2 class="contact-title">LET'S<br>CONNECT<span class="green">.</span></h2><div class="meta" style="margin-bottom:20px">Professional & academic inquiries</div><div class="email-row"><img class="email-photo" src="email-photo.jpg?v=3" alt="Mezanoor Rahman Ashin"><a class="email" href="mailto:mezanoor.ashin@gmail.com">mezanoor.ashin@gmail.com ↗</a></div></div></div></section>
 </main>
-<footer><span>© 2026 Mezanoor Rahman Ashin</span><span>Dhaka, Bangladesh · Digital portfolio</span></footer>
+<footer class="wrap"><span>© 2026 Mezanoor Rahman Ashin</span><span>Digital portfolio · Dhaka, Bangladesh</span></footer>
 
-<script type="module">
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
-
-const canvas=document.querySelector(".webgl");
-const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
-const scene=new THREE.Scene();scene.fog=new THREE.FogExp2(0x050505,.045);
-const camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);camera.position.set(0,0,9);
-const group=new THREE.Group();scene.add(group);
-const ambient=new THREE.HemisphereLight(0xffffff,0x101010,1.7);scene.add(ambient);
-const key=new THREE.PointLight(0xc8ff3d,32,18);key.position.set(4,4,5);scene.add(key);
-const rim=new THREE.PointLight(0x5577ff,22,16);rim.position.set(-5,-2,4);scene.add(rim);
-
-const photoTexture=new THREE.TextureLoader().load("profile.jpg?v=10");photoTexture.colorSpace=THREE.SRGBColorSpace;
-const photo=new THREE.Mesh(new THREE.PlaneGeometry(2.55,3.2),new THREE.MeshPhysicalMaterial({map:photoTexture,roughness:.34,metalness:.08,clearcoat:1,clearcoatRoughness:.2}));
-photo.position.set(1.75,.25,.2);photo.rotation.y=-.18;group.add(photo);
-const frame=new THREE.Mesh(new THREE.BoxGeometry(2.78,3.43,.16),new THREE.MeshPhysicalMaterial({color:0x101010,metalness:.75,roughness:.2,clearcoat:1}));
-frame.position.copy(photo.position);frame.position.z=-.05;frame.rotation.copy(photo.rotation);group.add(frame);
-
-const glass=new THREE.Mesh(new THREE.IcosahedronGeometry(1.7,2),new THREE.MeshPhysicalMaterial({color:0x9cc7ff,transparent:true,opacity:.12,roughness:.05,metalness:.15,transmission:.5,thickness:1.2,clearcoat:1}));
-glass.position.set(-1.7,.3,.4);group.add(glass);
-const ring=new THREE.Mesh(new THREE.TorusGeometry(2.05,.025,12,160),new THREE.MeshBasicMaterial({color:0xc8ff3d,transparent:true,opacity:.65}));
-ring.position.set(-1.7,.3,.4);ring.rotation.x=.9;group.add(ring);
-
-const starsGeo=new THREE.BufferGeometry();const count=900;const pos=new Float32Array(count*3);
-for(let i=0;i<count;i++){pos[i*3]=(Math.random()-.5)*22;pos[i*3+1]=(Math.random()-.5)*15;pos[i*3+2]=(Math.random()-.5)*13}
-starsGeo.setAttribute("position",new THREE.BufferAttribute(pos,3));
-const stars=new THREE.Points(starsGeo,new THREE.PointsMaterial({color:0xffffff,size:.018,transparent:true,opacity:.6}));scene.add(stars);
-
-const orbGeo=new THREE.SphereGeometry(.28,32,32);const orbs=[];
-for(let i=0;i<8;i++){const m=new THREE.Mesh(orbGeo,new THREE.MeshPhysicalMaterial({color:i%2?0xc8ff3d:0x80aaff,metalness:.6,roughness:.18,clearcoat:1}));m.position.set((Math.random()-.5)*8,(Math.random()-.5)*6,(Math.random()-.5)*4);m.userData={speed:.25+Math.random()*.5,phase:Math.random()*6.28};scene.add(m);orbs.push(m)}
-
-let mx=0,my=0,tx=0,ty=0,scroll=0;
-addEventListener("pointermove",e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)});
-addEventListener("scroll",()=>scroll=scrollY/innerHeight);
-addEventListener("resize",()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2))});
-const cursor=document.querySelector(".cursor-dot");addEventListener("pointermove",e=>{cursor.style.left=e.clientX+"px";cursor.style.top=e.clientY+"px"});
-const clock=new THREE.Clock();
-function animate(){
- const t=clock.getElapsedTime();tx+=(mx-tx)*.045;ty+=(my-ty)*.045;
- group.rotation.y=tx*.18+scroll*.12;group.rotation.x=-ty*.1;
- group.position.y=-scroll*.75;photo.rotation.z=Math.sin(t*.45)*.015;glass.rotation.x=t*.18;glass.rotation.y=t*.3;ring.rotation.z=t*.2;
- stars.rotation.y=t*.008;
- orbs.forEach((o,i)=>{o.position.y+=Math.sin(t*o.userData.speed+o.userData.phase)*.0018;o.rotation.x=t*.2+i*.3;o.rotation.y=t*.3});
- camera.position.x+=(tx*1.2-camera.position.x)*.03;camera.position.y+=(-ty*.7-camera.position.y)*.03;camera.lookAt(0,0,0);
- renderer.render(scene,camera);requestAnimationFrame(animate)
-}
-animate();
+<script>
+const orb=document.querySelector('.orb'),hud=document.querySelector('.hud');
+let mx=0,my=0,x=0,y=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+function loop(){x+=(mx-x)*.04;y+=(my-y)*.04;orb.style.transform='translateZ(120px) translate('+x*25+'px,'+y*25+'px)';hud.style.transform='rotateY('+x*4+'deg) rotateX('+(-y*3)+'deg)';requestAnimationFrame(loop)}loop();
 </script>
 </body></html>
